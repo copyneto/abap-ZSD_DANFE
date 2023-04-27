@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Tratamento valor por extenso</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGSD_VALOR_EXTENSOTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGSD_VALOR_EXTENSO</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMSD_VALOR_EXTENSO</FUNCNAME>
+     <SHORT_TEXT>Tratamento valor por extenso</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_VALOR</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR100</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_VALOR</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>STRING</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_VALOR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Montante</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_VALOR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Montante por extenso</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
