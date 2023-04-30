@@ -19,7 +19,10 @@
         CLEAR lr_centro_mg.
     ENDTRY.
 
-    DATA(lv_text_re) = CONV char950( |{ TEXT-f71 } { TEXT-f72 } { TEXT-f73 }| ).
+* LSCHEPP - 8000006781 - Dados adicionais - DANFE e XML - 28.04.2023 Início
+*    DATA(lv_text_re) = CONV char950( |{ TEXT-f71 } { TEXT-f72 } { TEXT-f73 }| ).
+    DATA(lv_text_re) = CONV char950( |{ TEXT-f71 } { TEXT-f72 } { TEXT-f93 } { TEXT-f94 } { TEXT-f73 }| ).
+* LSCHEPP - 8000006781 - Dados adicionais - DANFE e XML - 28.04.2023 Fim
 
     IF lr_centro_mg IS NOT INITIAL.
       lt_centro = VALUE #( FOR ls_it IN it_nflin WHERE ( werks IN lr_centro_mg )
@@ -41,6 +44,12 @@
             APPEND VALUE j_1bnfftx( seqnum = lv_seq linnum = lv_linnum message = TEXT-f71 ) TO <fs_nfetx_man>.
             ADD 1 TO lv_linnum.
             APPEND VALUE j_1bnfftx( seqnum = lv_seq linnum = lv_linnum message = TEXT-f72 ) TO <fs_nfetx_man>.
+* LSCHEPP - 8000006781 - Dados adicionais - DANFE e XML - 28.04.2023 Início
+            ADD 1 TO lv_linnum.
+            APPEND VALUE j_1bnfftx( seqnum = lv_seq linnum = lv_linnum message = TEXT-f93 ) TO <fs_nfetx_man>.
+            ADD 1 TO lv_linnum.
+            APPEND VALUE j_1bnfftx( seqnum = lv_seq linnum = lv_linnum message = TEXT-f94 ) TO <fs_nfetx_man>.
+* LSCHEPP - 8000006781 - Dados adicionais - DANFE e XML - 28.04.2023 Fim
             ADD 1 TO lv_linnum.
             APPEND VALUE j_1bnfftx( seqnum = lv_seq linnum = lv_linnum message = TEXT-f73 ) TO <fs_nfetx_man>.
 
@@ -71,16 +80,19 @@
               APPEND VALUE j_1bnfftx( seqnum = lv_seq linnum = lv_linnum message = TEXT-f71 ) TO <fs_nfetx_tab>.
               ADD 1 TO lv_linnum.
               APPEND VALUE j_1bnfftx( seqnum = lv_seq linnum = lv_linnum message = TEXT-f72 ) TO <fs_nfetx_tab>.
+* LSCHEPP - 8000006781 - Dados adicionais - DANFE e XML - 28.04.2023 Início
+              ADD 1 TO lv_linnum.
+              APPEND VALUE j_1bnfftx( seqnum = lv_seq linnum = lv_linnum message = TEXT-f93 ) TO <fs_nfetx_tab>.
+              ADD 1 TO lv_linnum.
+              APPEND VALUE j_1bnfftx( seqnum = lv_seq linnum = lv_linnum message = TEXT-f94 ) TO <fs_nfetx_tab>.
+* LSCHEPP - 8000006781 - Dados adicionais - DANFE e XML - 28.04.2023 Fim
               ADD 1 TO lv_linnum.
               APPEND VALUE j_1bnfftx( seqnum = lv_seq linnum = lv_linnum message = TEXT-f73 ) TO <fs_nfetx_tab>.
 
             ENDIF.
 
-*            cs_header-infcpl = |{ cs_header-infcpl } { TEXT-f71 } { TEXT-f72 } { TEXT-f73 }|.
-
           ENDIF.
 
-*          lv_text_re = CONV char950( |{ TEXT-f71 } { TEXT-f72 } { TEXT-f73 }| ).
           SEARCH cs_header-infcpl FOR lv_text_re.
           IF sy-subrc NE 0.
             cs_header-infcpl = |{ cs_header-infcpl } { lv_text_re } |.
