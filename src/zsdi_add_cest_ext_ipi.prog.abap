@@ -101,7 +101,7 @@
          ENDIF.
          lv_linhas = |{ lv_linhas } { 'EXTIPI' }: { <fs_nflin>-nbm+11(2) }|.
        ENDIF.
-       CLEAR lv_cest.
+
        IF <fs_nflin>-taxsit NE '1'.
          IF lv_vicmsdif IS NOT INITIAL.
 * LSCHEPP - 8000006816 - Dados adicionais - DANFE e XML - 28.04.2023 Início
@@ -117,6 +117,8 @@
 * LSCHEPP - 8000006816 - Dados adicionais - DANFE e XML - 28.04.2023 Fim
          ENDIF.
        ENDIF.
+
+       CLEAR lv_cest.
 
        ASSIGN ('(SAPLJ1BG)WNFFTX[]') TO <fs_nfetx_tab>.
        IF NOT <fs_nfetx_tab> IS ASSIGNED.
