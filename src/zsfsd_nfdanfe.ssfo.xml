@@ -12587,7 +12587,7 @@
                              <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-NOTA_FISCAL-dsaient&amp;&lt;/&gt;</TDLINE>
                             </item>
                            </TEXT>
-                           <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
+                           <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
                             <NCOLS>0</NCOLS>
@@ -12770,6 +12770,18 @@
                              <OUTIN>I</OUTIN>
                             </item>
                             <item>
+                             <OPD>NOTA_FISCAL-NOTA_FISCAL-BUKRS</OPD>
+                             <OUTIN>I</OUTIN>
+                            </item>
+                            <item>
+                             <OPD>NOTA_FISCAL-NOTA_FISCAL-BRANCH</OPD>
+                             <OUTIN>I</OUTIN>
+                            </item>
+                            <item>
+                             <OPD>NOTA_FISCAL-NOTA_FISCAL-DSAIENT</OPD>
+                             <OUTIN>I</OUTIN>
+                            </item>
+                            <item>
                              <OPD>V_HORA_SAIDA</OPD>
                              <OUTIN>O</OUTIN>
                             </item>
@@ -12785,6 +12797,22 @@
                            <CODE>
                             <item>CLEAR: v_hora_saida.</item>
                             <item/>
+                            <item>* LSCHEPP - 8000006757, EXTIPI E HORÁRIO DE SAÍDA - 05.05.2023 Início</item>
+                            <item>CONSTANTS lc_hour TYPE thour VALUE &apos;1.00-&apos;.</item>
+                            <item/>
+                            <item>IF nota_fiscal-nota_fiscal-bukrs EQ &apos;3600&apos; AND</item>
+                            <item>   nota_fiscal-nota_fiscal-branch EQ &apos;CB23&apos;.</item>
+                            <item>  CALL FUNCTION &apos;CATT_ADD_TO_TIME&apos;</item>
+                            <item>    EXPORTING</item>
+                            <item>      idate = nota_fiscal-nota_fiscal-dsaient</item>
+                            <item>      itime = nota_fiscal-nota_fiscal-hsaient</item>
+                            <item>      stdaz = lc_hour</item>
+                            <item>    IMPORTING</item>
+                            <item>      edate = nota_fiscal-nota_fiscal-dsaient</item>
+                            <item>      etime = nota_fiscal-nota_fiscal-hsaient.</item>
+                            <item>ENDIF.</item>
+                            <item>* LSCHEPP - 8000006757, EXTIPI E HORÁRIO DE SAÍDA - 05.05.2023 Fim</item>
+                            <item/>
                             <item>IF nota_fiscal-nota_fiscal-hsaient IS NOT INITIAL.</item>
                             <item>  WRITE nota_fiscal-nota_fiscal-hsaient TO v_hora_saida.</item>
                             <item>ENDIF.</item>
@@ -12796,16 +12824,6 @@
                             <item>  gv_municipio = &apos;EXTERIOR&apos;.</item>
                             <item>  gv_uf = &apos;EX&apos;.</item>
                             <item>ENDIF.</item>
-                            <item/>
-                            <item/>
-                            <item/>
-                            <item/>
-                            <item/>
-                            <item/>
-                            <item/>
-                            <item/>
-                            <item/>
-                            <item/>
                             <item/>
                             <item/>
                             <item/>

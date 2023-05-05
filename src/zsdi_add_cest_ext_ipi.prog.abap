@@ -104,21 +104,22 @@
 
        IF <fs_nflin>-taxsit NE '1'.
          IF lv_vicmsdif IS NOT INITIAL.
-* LSCHEPP - 8000006816 - Dados adicionais - DANFE e XML - 28.04.2023 Início
+* LSCHEPP - 8000006816 - Dados adicionais - DANFE e XML - 03.05.2023 Início
 *           lv_linhas = |{ lv_linhas } { 'ITEM' }: { lv_matnr } { TEXT-f17 }: { lv_vicmsdif }|.
 *           lv_mont_total = lv_mont_total + lv_vicmsdif.
            IF lv_cest IS INITIAL AND
               <fs_nflin>-nbm+11(2) IS INITIAL.
              lv_linhas = |{ lv_linhas } { 'ITEM' }: { lv_matnr } { TEXT-f17 }: { lv_vicmsdif }|.
            ELSE.
-             lv_linhas = |{ TEXT-f17 }: { lv_vicmsdif }|.
+             lv_linhas = |{ lv_linhas } { TEXT-f17 }: { lv_vicmsdif }|.
            ENDIF.
            lv_mont_total = lv_mont_total + lv_vicmsdif.
-* LSCHEPP - 8000006816 - Dados adicionais - DANFE e XML - 28.04.2023 Fim
+* LSCHEPP - 8000006816 - Dados adicionais - DANFE e XML - 03.05.2023 Fim
          ENDIF.
        ENDIF.
 
        CLEAR lv_cest.
+       CONDENSE lv_linhas.
 
        ASSIGN ('(SAPLJ1BG)WNFFTX[]') TO <fs_nfetx_tab>.
        IF NOT <fs_nfetx_tab> IS ASSIGNED.
