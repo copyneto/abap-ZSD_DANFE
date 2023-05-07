@@ -3,7 +3,6 @@
  <sf:SMARTFORM xmlns:sf="urn:sap-com:SmartForms:2000:internal-structure" xmlns="urn:sap-com:sdixml-ifr:2000">
   <HEADER>
    <FORMNAME>ZSFSD_NFDANFE</FORMNAME>
-   <CAPTION>DANFE  - Landscape</CAPTION>
    <MASTERLANG>P</MASTERLANG>
    <LANGVECTOR>*</LANGVECTOR>
    <DEVCLASS></DEVCLASS>
@@ -1267,7 +1266,6 @@
            <NAME>
             <INAME>FIRST_PAGE</INAME>
            </NAME>
-           <CAPTION>First Page</CAPTION>
            <NEXTPAGE>
             <INAME>FIRST_PAGE</INAME>
            </NEXTPAGE>
@@ -1288,7 +1286,6 @@
              <NAME>
               <INAME>%GRAPHIC3</INAME>
              </NAME>
-             <CAPTION>Tela de fundo</CAPTION>
              <GTYPE>B</GTYPE>
              <GKEYBDS>
               <BTYPE>BMON</BTYPE>
@@ -1327,7 +1324,6 @@
               <NAME>
                <INAME>MARCA_DAGUA</INAME>
               </NAME>
-              <CAPTION>Marca D&apos;água</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -1350,7 +1346,6 @@
                      <NAME>
                       <INAME>MARCA_DAGUA</INAME>
                      </NAME>
-                     <CAPTION>Imagem para marca d&apos;água</CAPTION>
                      <RESOLUTION>0075</RESOLUTION>
                      <GTYPE>B</GTYPE>
                      <GKEYBDS>
@@ -1387,7 +1382,6 @@
                      <NAME>
                       <INAME>%CONDITION20</INAME>
                      </NAME>
-                     <CAPTION>Nova alternativa 20</CAPTION>
                      <COND>
                       <item>
                        <COP>NE</COP>
@@ -1502,7 +1496,6 @@
               <NAME>
                <INAME>CAB_DADOS_ADICIONAIS</INAME>
               </NAME>
-              <CAPTION>DADOS ADICIONAIS TEXTO</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -1525,7 +1518,6 @@
                      <NAME>
                       <INAME>%GRAPHIC4</INAME>
                      </NAME>
-                     <CAPTION>Gráfico novo 4</CAPTION>
                      <RESOLUTION>0200</RESOLUTION>
                      <GTYPE>B</GTYPE>
                      <GKEYBDS>
@@ -1652,7 +1644,6 @@
               <NAME>
                <INAME>NOVO_CABECALHO</INAME>
               </NAME>
-              <CAPTION>Cabeçalho principal</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -1675,7 +1666,6 @@
                      <NAME>
                       <INAME>%GRAPHIC2</INAME>
                      </NAME>
-                     <CAPTION>Gráfico novo 2</CAPTION>
                      <RESOLUTION>0200</RESOLUTION>
                      <GTYPE>B</GTYPE>
                      <GKEYBDS>
@@ -1802,7 +1792,6 @@
               <NAME>
                <INAME>TEXT_SD</INAME>
               </NAME>
-              <CAPTION>texto SD</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -1825,7 +1814,6 @@
                      <NAME>
                       <INAME>%CODE7</INAME>
                      </NAME>
-                     <CAPTION>Novas linhasPrograma 7</CAPTION>
                      <PLIST>
                       <item>
                        <OPD>NOTA_FISCAL</OPD>
@@ -2093,7 +2081,6 @@
                      <NAME>
                       <INAME>%LOOP1</INAME>
                      </NAME>
-                     <CAPTION>Novo loop 1</CAPTION>
                      <SECTTYPE>L</SECTTYPE>
                      <DATATYPE>L</DATATYPE>
                      <TABNAME>IT_TXT_SD</TABNAME>
@@ -2130,7 +2117,6 @@
                         <NAME>
                          <INAME>%TEXT2</INAME>
                         </NAME>
-                        <CAPTION>Texto novo 2</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -2242,7 +2228,6 @@
                      <NAME>
                       <INAME>%TEXT6</INAME>
                      </NAME>
-                     <CAPTION>Texto novo 6</CAPTION>
                      <NOLANGUAGE>X</NOLANGUAGE>
                      <APPMODE>P</APPMODE>
                      <TEXT>
@@ -2362,7 +2347,6 @@
               <NAME>
                <INAME>WIN_NUMB_SR</INAME>
               </NAME>
-              <CAPTION>Janela para o NF-e</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -2473,7 +2457,6 @@
               <NAME>
                <INAME>PONTILHADA</INAME>
               </NAME>
-              <CAPTION>linha pontilhada</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -2496,7 +2479,6 @@
                      <NAME>
                       <INAME>%GRAPHIC1</INAME>
                      </NAME>
-                     <CAPTION>Gráfico novo 1</CAPTION>
                      <RESOLUTION>0150</RESOLUTION>
                      <GTYPE>B</GTYPE>
                      <GKEYBDS>
@@ -2623,7 +2605,6 @@
               <NAME>
                <INAME>NUMB_SERIE</INAME>
               </NAME>
-              <CAPTION>Numero e serie canhoto</CAPTION>
               <WTYPE>T</WTYPE>
               <WCOPYMODE>1</WCOPYMODE>
               <T_CAPTION>
@@ -2647,7 +2628,6 @@
                      <NAME>
                       <INAME>%CODE20</INAME>
                      </NAME>
-                     <CAPTION>Novas linhasPrograma 20</CAPTION>
                      <PLIST>
                       <item>
                        <OPD>NOTA_FISCAL-NOTA_FISCAL-SERIES</OPD>
@@ -2709,25 +2689,7 @@
                      <NAME>
                       <INAME>NUMERO_SERIE</INAME>
                      </NAME>
-                     <CAPTION>Numero e serie canhoto</CAPTION>
                      <APPMODE>P</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>PC</TDFORMAT>
-                       <TDLINE>&lt;GD&gt;NF-e&lt;/&gt;</TDLINE>
-                      </item>
-                      <item>
-                       <TDFORMAT>*</TDFORMAT>
-                      </item>
-                      <item>
-                       <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;CP&gt;No.&amp;NOTA_FISCAL-NOTA_FISCAL-NFENUM&amp;&lt;/&gt;</TDLINE>
-                      </item>
-                      <item>
-                       <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;CP&gt;Série &amp;NOTA_FISCAL-NOTA_FISCAL-SERIES&amp;&lt;/&gt;</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -2877,7 +2839,6 @@
               <NAME>
                <INAME>CANHOTO</INAME>
               </NAME>
-              <CAPTION>Canhoto</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -2900,7 +2861,6 @@
                      <NAME>
                       <INAME>%GRAPHIC5</INAME>
                      </NAME>
-                     <CAPTION>Gráfico novo 5</CAPTION>
                      <RESOLUTION>0150</RESOLUTION>
                      <GTYPE>B</GTYPE>
                      <GKEYBDS>
@@ -3027,7 +2987,6 @@
               <NAME>
                <INAME>WIN_LOGOTIPO</INAME>
               </NAME>
-              <CAPTION>Logotipo</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -3050,7 +3009,6 @@
                      <NAME>
                       <INAME>HEADER3C</INAME>
                      </NAME>
-                     <CAPTION>Logo</CAPTION>
                      <RESOLUTION>0600</RESOLUTION>
                      <GTYPE>B</GTYPE>
                      <GKEYBDS>
@@ -3198,37 +3156,7 @@
                      <NAME>
                       <INAME>%TEXT8</INAME>
                      </NAME>
-                     <CAPTION>Address of Issuer</CAPTION>
                      <APPMODE>A</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>PF</TDFORMAT>
-                       <TDLINE>&lt;CS&gt;&amp;NOTA_FISCAL-ISSUER-NAME1&amp;&lt;/&gt;</TDLINE>
-                      </item>
-                      <item>
-                       <TDFORMAT>PF</TDFORMAT>
-                       <TDLINE>&lt;C1&gt;&amp;NOTA_FISCAL-ISSUER-STREET&amp;&lt;/&gt;&lt;C1&gt;, &amp;NOTA_FISCAL-ISSUER-HOUSE_NUM1&amp;</TDLINE>
-                      </item>
-                      <item>
-                       <TDLINE>&amp;NOTA_FISCAL-ISSUER-HOUSE_NUM2&amp;&lt;/&gt;</TDLINE>
-                      </item>
-                      <item>
-                       <TDFORMAT>PF</TDFORMAT>
-                       <TDLINE>&lt;C1&gt;&amp;NOTA_FISCAL-ISSUER-ORT02&amp;&lt;/&gt;</TDLINE>
-                      </item>
-                      <item>
-                       <TDFORMAT>PF</TDFORMAT>
-                       <TDLINE>&lt;C1&gt;&amp;NOTA_FISCAL-ISSUER-ORT01&amp;&lt;/&gt;&lt;C1&gt; / &amp;NOTA_FISCAL-ISSUER-REGIO&amp;&lt;/&gt;</TDLINE>
-                      </item>
-                      <item>
-                       <TDFORMAT>PF</TDFORMAT>
-                       <TDLINE>&lt;C1&gt;&amp;NOTA_FISCAL-ISSUER-PSTLZ&amp;&lt;/&gt;</TDLINE>
-                      </item>
-                      <item>
-                       <TDFORMAT>PF</TDFORMAT>
-                       <TDLINE>&lt;C1&gt;TEL.:&amp;NOTA_FISCAL-ISSUER-TELF1&amp;&lt;/&gt;</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -3477,7 +3405,6 @@
               <NAME>
                <INAME>HEADER</INAME>
               </NAME>
-              <CAPTION>Header</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -3500,7 +3427,6 @@
                      <NAME>
                       <INAME>TEMP_HEADER</INAME>
                      </NAME>
-                     <CAPTION>Header</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -9868,7 +9794,6 @@
                            <NAME>
                             <INAME>LOAD_ACCESS_KEY</INAME>
                            </NAME>
-                           <CAPTION>Novas linhasPrograma 2</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL-NFE</OPD>
@@ -9938,7 +9863,6 @@
                            <NAME>
                             <INAME>TXT_BARCODE</INAME>
                            </NAME>
-                           <CAPTION>Texto novo 18</CAPTION>
                            <NOLANGUAGE>X</NOLANGUAGE>
                            <APPMODE>P</APPMODE>
                            <TEXT>
@@ -10083,7 +10007,6 @@
                            <NAME>
                             <INAME>%CODE16</INAME>
                            </NAME>
-                           <CAPTION>Novas linhasPrograma 16</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL-NFE</OPD>
@@ -10164,18 +10087,7 @@
                            <NAME>
                             <INAME>C_ACESSO</INAME>
                            </NAME>
-                           <CAPTION>Texto novo 18</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PE</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;CHAVE DE ACESSO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PC</TDFORMAT>
-                             <TDLINE>&lt;CM&gt;&amp;V_CHAVE&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -10332,18 +10244,7 @@
                            <NAME>
                             <INAME>%TEXT18</INAME>
                            </NAME>
-                           <CAPTION>Consulta de autenticidade no..</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PH</TDFORMAT>
-                             <TDLINE>&lt;CQ&gt;Consulta de autenticidade no portal nacional da NF-e&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PH</TDFORMAT>
-                             <TDLINE>&lt;CI&gt;www.nfe.fazenda.gov.br/portal&lt;/&gt; ou no site da Sefaz Autorizada</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -10500,18 +10401,7 @@
                            <NAME>
                             <INAME>%TEXT20</INAME>
                            </NAME>
-                           <CAPTION>Nature of Operaçao</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PE</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;NATUREZA DA OPERAÇÃO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PF</TDFORMAT>
-                             <TDLINE>&lt;CQ&gt;&amp;NOTA_FISCAL-NOTA_FISCAL-NATOP&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -10634,7 +10524,6 @@
                            <NAME>
                             <INAME>%CONDITION11</INAME>
                            </NAME>
-                           <CAPTION>Dt/Hr autentic. dep. versao</CAPTION>
                            <COND>
                             <item>
                              <COP>EQ</COP>
@@ -10670,7 +10559,6 @@
                               <NAME>
                                <INAME>%EVENT3</INAME>
                               </NAME>
-                              <CAPTION>TRUE</CAPTION>
                               <EVTYPE>+</EVTYPE>
                               <T_CAPTION>
                                <item>
@@ -10692,18 +10580,7 @@
                                  <NAME>
                                   <INAME>%TEXT21</INAME>
                                  </NAME>
-                                 <CAPTION>Access Key</CAPTION>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>PE</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;PROTOCOLO DE AUTORIZAÇÃO&lt;/&gt;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDFORMAT>PG</TDFORMAT>
-                                   <TDLINE>&lt;CQ&gt;      &lt;/&gt;</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -10829,7 +10706,6 @@
                               <NAME>
                                <INAME>%EVENT10</INAME>
                               </NAME>
-                              <CAPTION>FALSE</CAPTION>
                               <EVTYPE>-</EVTYPE>
                               <T_CAPTION>
                                <item>
@@ -10851,7 +10727,6 @@
                                  <NAME>
                                   <INAME>%CODE22</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 22</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>NOTA_FISCAL-NFE-AUTHDATE</OPD>
@@ -10938,21 +10813,7 @@
                                  <NAME>
                                   <INAME>%TEXT22</INAME>
                                  </NAME>
-                                 <CAPTION>Access Key</CAPTION>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>PE</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;PROTOCOLO DE AUTORIZAÇÃO&lt;/&gt;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDFORMAT>PG</TDFORMAT>
-                                   <TDLINE>&lt;CQ&gt;&amp;NOTA_FISCAL-NFE-AUTHCOD&amp;   &amp;NOTA_FISCAL-NFE-AUTHDATE&amp;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDLINE>  &amp;NOTA_FISCAL-NFE-AUTHTIME&amp;&lt;/&gt;</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -11123,18 +10984,7 @@
                            <NAME>
                             <INAME>INSCR_ESTADUAL</INAME>
                            </NAME>
-                           <CAPTION>State Registration</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;INSCRIÇÃO ESTADUAL&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-ISSUER-STAINS&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -11257,18 +11107,7 @@
                            <NAME>
                             <INAME>INSCR_ESTADUAL_SUBST</INAME>
                            </NAME>
-                           <CAPTION>State Registration of ST</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;INSC. EST. SUBST. TRIB.&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-NOTA_FISCAL-IEST_BUPLA&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -11391,18 +11230,7 @@
                            <NAME>
                             <INAME>CNPJ</INAME>
                            </NAME>
-                           <CAPTION>CNPJ</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;CNPJ&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-ISSUER-CGC(18)&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -11559,7 +11387,6 @@
                            <NAME>
                             <INAME>CNPJ_DESTINATION</INAME>
                            </NAME>
-                           <CAPTION>CNPJ / CPF</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL-DESTINATION</OPD>
@@ -11640,28 +11467,7 @@
                            <NAME>
                             <INAME>COMPANY_NAME</INAME>
                            </NAME>
-                           <CAPTION>Company Name</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;NOME/RAZÃO SOCIAL&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-DESTINATION-NAME1&amp; &amp;NOTA_FISCAL-DESTINATION-NAME2(25)&amp;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>=</TDFORMAT>
-                             <TDLINE>&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -11809,24 +11615,7 @@
                            <NAME>
                             <INAME>CNPJ_DESTIN</INAME>
                            </NAME>
-                           <CAPTION>CNPJ Destination</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;CNPJ/CPF&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_CPF_CNPJ&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -11965,24 +11754,7 @@
                            <NAME>
                             <INAME>DTISSUE</INAME>
                            </NAME>
-                           <CAPTION>Data de emissão</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;DATA DA EMISSÃO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-NOTA_FISCAL-DOCDAT&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -12155,30 +11927,7 @@
                            <NAME>
                             <INAME>ADDRESS</INAME>
                            </NAME>
-                           <CAPTION>Address</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;ENDEREÇO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-DESTINATION-STREET&amp;&lt;/&gt;&lt;CR&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDLINE>&amp;NOTA_FISCAL-DESTINATION-HOUSE_NUM1&amp;</TDLINE>
-                            </item>
-                            <item>
-                             <TDLINE>&amp;NOTA_FISCAL-DESTINATION-HOUSE_NUM2&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -12333,24 +12082,7 @@
                            <NAME>
                             <INAME>NEIGHBORHOOD</INAME>
                            </NAME>
-                           <CAPTION>Bairro/Distrito</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;BAIRRO/DISTRITO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-DESTINATION-ORT02&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -12489,24 +12221,7 @@
                            <NAME>
                             <INAME>ZIPCODE</INAME>
                            </NAME>
-                           <CAPTION>Zipcode</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;CEP&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-DESTINATION-PSTLZ&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -12645,24 +12360,7 @@
                            <NAME>
                             <INAME>DTEXIT</INAME>
                            </NAME>
-                           <CAPTION>Data Saída/Entrada</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;DATA SAÍDA/ENTRADA&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-NOTA_FISCAL-dsaient&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -12835,7 +12533,6 @@
                            <NAME>
                             <INAME>%CODE15</INAME>
                            </NAME>
-                           <CAPTION>Novas linhasPrograma 15</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL-NOTA_FISCAL-HSAIENT</OPD>
@@ -12933,24 +12630,7 @@
                            <NAME>
                             <INAME>MUNICIPALITY</INAME>
                            </NAME>
-                           <CAPTION>Municipality</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;MUNICÍPIO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;GV_MUNICIPIO&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -13089,24 +12769,7 @@
                            <NAME>
                             <INAME>FONEFAX_DESTINATION</INAME>
                            </NAME>
-                           <CAPTION>Fone/FAX</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;TELEFONE/FAX&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-DESTINATION-TELF1&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -13245,24 +12908,7 @@
                            <NAME>
                             <INAME>STATE</INAME>
                            </NAME>
-                           <CAPTION>State</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;UF&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;GV_UF&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -13401,24 +13047,7 @@
                            <NAME>
                             <INAME>INSC_EST_DESTINATION</INAME>
                            </NAME>
-                           <CAPTION>State Registration</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;INSCRIÇÃO ESTADUAL&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-DESTINATION-STAINS&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -13557,21 +13186,7 @@
                            <NAME>
                             <INAME>TMEXIT</INAME>
                            </NAME>
-                           <CAPTION>Hora Saída/Entrada</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;HORA SAÍDA/ENTRADA&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_HORA_SAIDA&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -13736,7 +13351,6 @@
                            <NAME>
                             <INAME>VERIF_PAGE</INAME>
                            </NAME>
-                           <CAPTION>Verifica se é úmtima página</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL</OPD>
@@ -13883,12 +13497,6 @@
                             <INAME>T_NUMERO01</INAME>
                            </NAME>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;NÚMERO&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -14002,12 +13610,6 @@
                             <INAME>T_VENCIMENTO01</INAME>
                            </NAME>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VENCIMENTO&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -14121,12 +13723,6 @@
                             <INAME>T_VALOR01</INAME>
                            </NAME>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -14240,12 +13836,6 @@
                             <INAME>T_NUMERO02</INAME>
                            </NAME>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;NÚMERO&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -14359,12 +13949,6 @@
                             <INAME>T_VENCIMENTO02</INAME>
                            </NAME>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VENCIMENTO&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -14478,12 +14062,6 @@
                             <INAME>T_VALOR02</INAME>
                            </NAME>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -14597,12 +14175,6 @@
                             <INAME>T_NUMERO03</INAME>
                            </NAME>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;NÚMERO&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -14716,12 +14288,6 @@
                             <INAME>T_VENCIMENTO03</INAME>
                            </NAME>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VENCIMENTO&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -14835,12 +14401,6 @@
                             <INAME>T_VALOR03</INAME>
                            </NAME>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -14987,7 +14547,6 @@
                            <NAME>
                             <INAME>%CODE19</INAME>
                            </NAME>
-                           <CAPTION>Novas linhasPrograma 19</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL</OPD>
@@ -17469,7 +17028,6 @@
                            <NAME>
                             <INAME>CALC_IMPOSTO_ASTERISCOS</INAME>
                            </NAME>
-                           <CAPTION>Verifica se é úmtima página</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>V_ICMSBASE</OPD>
@@ -17668,18 +17226,7 @@
                            <NAME>
                             <INAME>D_BCICMS2</INAME>
                            </NAME>
-                           <CAPTION>Base Calc ICMS</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;BASE CÁLCULO ICMS&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_ICMSBASE&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -17802,7 +17349,6 @@
                            <NAME>
                             <INAME>%LOOP3</INAME>
                            </NAME>
-                           <CAPTION>Novo loop 3</CAPTION>
                            <SECTTYPE>L</SECTTYPE>
                            <DATATYPE>L</DATATYPE>
                            <TABNAME>NOTA_FISCAL-ITEM</TABNAME>
@@ -17839,7 +17385,6 @@
                               <NAME>
                                <INAME>%CODE17</INAME>
                               </NAME>
-                              <CAPTION>Novas linhasPrograma 17</CAPTION>
                               <PLIST>
                                <item>
                                 <OPD>TAB_ITEM_TAX</OPD>
@@ -17934,7 +17479,6 @@
                            <NAME>
                             <INAME>%CODE18</INAME>
                            </NAME>
-                           <CAPTION>Novas linhasPrograma 18</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL</OPD>
@@ -18003,18 +17547,7 @@
                            <NAME>
                             <INAME>D_VICMS2</INAME>
                            </NAME>
-                           <CAPTION>Value ICMS</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR DO ICMS&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_ICMS_VAL_TOT&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -18137,18 +17670,7 @@
                            <NAME>
                             <INAME>D_BCICMSST</INAME>
                            </NAME>
-                           <CAPTION>Base Calc ICMS ST</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;BASE CÁLCULO ICMS ST&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_ICSTBASE&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -18271,7 +17793,6 @@
                            <NAME>
                             <INAME>%LOOP2</INAME>
                            </NAME>
-                           <CAPTION>Novo loop 2</CAPTION>
                            <SECTTYPE>L</SECTTYPE>
                            <DATATYPE>L</DATATYPE>
                            <TABNAME>NOTA_FISCAL-ITEM</TABNAME>
@@ -18308,7 +17829,6 @@
                               <NAME>
                                <INAME>%CODE5</INAME>
                               </NAME>
-                              <CAPTION>Novas linhasPrograma 5</CAPTION>
                               <PLIST>
                                <item>
                                 <OPD>TAB_ITEM_TAX</OPD>
@@ -18404,7 +17924,6 @@
                            <NAME>
                             <INAME>%CODE9</INAME>
                            </NAME>
-                           <CAPTION>Novas linhasPrograma 9</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>GV_ICMS_ST_VAL_TOT</OPD>
@@ -18466,18 +17985,7 @@
                            <NAME>
                             <INAME>D_VICMSST</INAME>
                            </NAME>
-                           <CAPTION>Value ICMS ST</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR DO ICMS ST&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_ICSTVAL&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -18600,18 +18108,7 @@
                            <NAME>
                             <INAME>D_VFREIGHT</INAME>
                            </NAME>
-                           <CAPTION>Value of Freight</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR DO FRETE&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_NFFRE&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -18734,18 +18231,7 @@
                            <NAME>
                             <INAME>D_VINSURANCE</INAME>
                            </NAME>
-                           <CAPTION>Value of Insurance</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR DO SEGURO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_NFINS&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -18902,7 +18388,6 @@
                            <NAME>
                             <INAME>V_NFOTH</INAME>
                            </NAME>
-                           <CAPTION>Novas linhasPrograma 5</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL</OPD>
@@ -18978,18 +18463,7 @@
                            <NAME>
                             <INAME>D_VIPI2</INAME>
                            </NAME>
-                           <CAPTION>Value IPI</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR DO IPI&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&lt;CR&gt;&amp;V_IPIVAL&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -19112,18 +18586,7 @@
                            <NAME>
                             <INAME>D_PIS</INAME>
                            </NAME>
-                           <CAPTION>Value PIS</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR DO PIS&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_PISVAL&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -19246,18 +18709,7 @@
                            <NAME>
                             <INAME>D_COFINS</INAME>
                            </NAME>
-                           <CAPTION>Value COFINS</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR DO COFINS&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_COFIVAL&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -19380,18 +18832,7 @@
                            <NAME>
                             <INAME>D_VOTHERS</INAME>
                            </NAME>
-                           <CAPTION>Value of Other Expenses</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;OUTRAS DESPESAS&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_NFOTH&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -19514,18 +18955,7 @@
                            <NAME>
                             <INAME>D_VPROD</INAME>
                            </NAME>
-                           <CAPTION>Value of Products</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR TOTAL PRODUTOS&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_NFNETT&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -19648,7 +19078,6 @@
                            <NAME>
                             <INAME>%CODE8</INAME>
                            </NAME>
-                           <CAPTION>Novas linhasPrograma 8</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>V_NFDIS</OPD>
@@ -19688,18 +19117,7 @@
                            <NAME>
                             <INAME>D_VDISCOUNT</INAME>
                            </NAME>
-                           <CAPTION>Value of discount</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;DESCONTO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_NFDIS&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -19822,18 +19240,7 @@
                            <NAME>
                             <INAME>D_VTOTALNF</INAME>
                            </NAME>
-                           <CAPTION>Value Total of NF</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;VALOR TOTAL DA NF&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_NFTOT&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -19990,24 +19397,7 @@
                            <NAME>
                             <INAME>COMPANY_NAME_C</INAME>
                            </NAME>
-                           <CAPTION>Company Name Carrier</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;RAZÃO SOCIAL&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-CARRIER-NAME1&amp; &amp;NOTA_FISCAL-CARRIER-NAME2(24)&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -20146,7 +19536,6 @@
                            <NAME>
                             <INAME>%CODE4</INAME>
                            </NAME>
-                           <CAPTION>Novas linhasPrograma 4</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL-NOTA_FISCAL-MODFRETE</OPD>
@@ -20227,24 +19616,7 @@
                            <NAME>
                             <INAME>FREIGHT_ACCOUNT_C</INAME>
                            </NAME>
-                           <CAPTION>Freight by Account</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PE</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;FRETE POR CONTA&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;V_FRETE&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <REF_LANG>P</REF_LANG>
                            <TEXT_AREA>
@@ -20384,7 +19756,6 @@
                            <NAME>
                             <INAME>%CODE2</INAME>
                            </NAME>
-                           <CAPTION>Novas linhasPrograma 2</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL-CARRIER</OPD>
@@ -20448,24 +19819,7 @@
                            <NAME>
                             <INAME>CODE_ANTT</INAME>
                            </NAME>
-                           <CAPTION>Code ANTT</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PE</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;CÓDIGO ANTT&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&lt;CR&gt;&amp;V_ANTT&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -20604,24 +19958,7 @@
                            <NAME>
                             <INAME>PLATE_C</INAME>
                            </NAME>
-                           <CAPTION>Plate</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;PLACA&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&lt;CR&gt;&amp;NOTA_FISCAL-NOTA_FISCAL-TRAID&amp;&lt;/&gt;&lt;/&gt;&lt;C1&gt;&lt;CR&gt; &lt;/&gt;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -20760,24 +20097,7 @@
                            <NAME>
                             <INAME>STATE_VEHICLE</INAME>
                            </NAME>
-                           <CAPTION>State of vehicle</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;UF&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-CARRIER-REGIO&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -20916,7 +20236,6 @@
                            <NAME>
                             <INAME>CNPJ_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>CNPJ Carrier</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL-CARRIER</OPD>
@@ -20999,28 +20318,7 @@
                            <NAME>
                             <INAME>CNPJ_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>CNPJ Carrier</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;CNPJ&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>/*</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&amp;V_CPF_CNPJ&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&lt;CR&gt;&amp;NOTA_FISCAL-CARRIER-CGC(18)&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -21202,24 +20500,7 @@
                            <NAME>
                             <INAME>ADDRESS_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>Address  Carrier</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;ENDEREÇO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-CARRIER-STRAS&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -21358,24 +20639,7 @@
                            <NAME>
                             <INAME>COUNTY_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>County Carrier</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;MUNICÍPIO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&lt;CR&gt;&amp;NOTA_FISCAL-CARRIER-ORT01&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -21514,24 +20778,7 @@
                            <NAME>
                             <INAME>STATE_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>State Carrier</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;UF&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&lt;CR&gt;&amp;NOTA_FISCAL-CARRIER-REGIO&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -21670,24 +20917,7 @@
                            <NAME>
                             <INAME>INSC_ST_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>Registration State C</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;INSCRIÇÃO ESTADUAL&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&lt;CR&gt;&amp;NOTA_FISCAL-CARRIER-STAINS&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -21860,24 +21090,7 @@
                            <NAME>
                             <INAME>QUANTITY_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>Quantity</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;QUANTIDADE&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;GV_ANZPK&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -22016,7 +21229,6 @@
                            <NAME>
                             <INAME>%CODE21</INAME>
                            </NAME>
-                           <CAPTION>Novas linhasPrograma 21</CAPTION>
                            <PLIST>
                             <item>
                              <OPD>NOTA_FISCAL</OPD>
@@ -22154,24 +21366,7 @@
                            <NAME>
                             <INAME>SPECIES_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>Species</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;ESPÉCIE&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&lt;CR&gt;&amp;GV_ESPECIE&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -22310,24 +21505,7 @@
                            <NAME>
                             <INAME>BRAND_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>Brand</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;MARCA&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&lt;CR&gt;&amp;NOTA_FISCAL-OTHERS-BRAND_VOL&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -22466,24 +21644,7 @@
                            <NAME>
                             <INAME>NUMBERING_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>Numbering</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;NUMERAÇÃO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                             <TDLINE>&lt;CR&gt;&amp;NOTA_FISCAL-NOTA_FISCAL-SHPNUM&amp;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -22622,24 +21783,7 @@
                            <NAME>
                             <INAME>GWR_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>GWR</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;PESO BRUTO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&lt;CR&gt;&amp;NOTA_FISCAL-NOTA_FISCAL-BRGEW&amp;&lt;/&gt;&lt;/&gt;&lt;C1&gt;&lt;CR&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDLINE>&amp;NOTA_FISCAL-NOTA_FISCAL-GEWEI&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -22778,24 +21922,7 @@
                            <NAME>
                             <INAME>NET_WEIGHT_CARRIER</INAME>
                            </NAME>
-                           <CAPTION>Net Weight</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;PESO LÍQUIDO&lt;/&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDFORMAT>TE</TDFORMAT>
-                            </item>
-                            <item>
-                             <TDFORMAT>PD</TDFORMAT>
-                             <TDLINE>&lt;C1&gt;&lt;CR&gt;&amp;NOTA_FISCAL-NOTA_FISCAL-NTGEW&amp;&lt;/&gt;&lt;/&gt;&lt;C1&gt;&lt;CR&gt;</TDLINE>
-                            </item>
-                            <item>
-                             <TDLINE>&amp;NOTA_FISCAL-NOTA_FISCAL-GEWEI&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -22968,14 +22095,7 @@
                            <NAME>
                             <INAME>PRODUCT_HEADER</INAME>
                            </NAME>
-                           <CAPTION>Product</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;CÓD.&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -23089,14 +22209,7 @@
                            <NAME>
                             <INAME>DESCRIPTION_HEADER</INAME>
                            </NAME>
-                           <CAPTION>Description</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;DESCRIÇÃO DO PRODUTO/SERVIÇO&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -23210,14 +22323,7 @@
                            <NAME>
                             <INAME>NCM_HEADER</INAME>
                            </NAME>
-                           <CAPTION>NCM/SH</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;NCM/SH&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -23331,14 +22437,7 @@
                            <NAME>
                             <INAME>CST_HEADER</INAME>
                            </NAME>
-                           <CAPTION>CST</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;CST&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -23452,14 +22551,7 @@
                            <NAME>
                             <INAME>CFOP_HEADER</INAME>
                            </NAME>
-                           <CAPTION>CFOP</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;CFOP&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -23573,14 +22665,7 @@
                            <NAME>
                             <INAME>UNIT_HEADER</INAME>
                            </NAME>
-                           <CAPTION>Unit</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;UN&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -23694,14 +22779,7 @@
                            <NAME>
                             <INAME>QTD_HEADER</INAME>
                            </NAME>
-                           <CAPTION>Quantity</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;QTDE.&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -23815,14 +22893,7 @@
                            <NAME>
                             <INAME>DESC_HDR</INAME>
                            </NAME>
-                           <CAPTION>DESCONTO</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;VL.UNIT&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -23936,14 +23007,7 @@
                            <NAME>
                             <INAME>VTOTAL_HEADER</INAME>
                            </NAME>
-                           <CAPTION>Total value</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;VL. TOTAL&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -24057,14 +23121,7 @@
                            <NAME>
                             <INAME>DESC</INAME>
                            </NAME>
-                           <CAPTION>DESCONTO</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;DESC&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -24178,14 +23235,7 @@
                            <NAME>
                             <INAME>BC_ICMS_HEADER</INAME>
                            </NAME>
-                           <CAPTION>Base Calc. ICMS</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;BC. ICMS&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -24299,14 +23349,7 @@
                            <NAME>
                             <INAME>VICMS_HEADER</INAME>
                            </NAME>
-                           <CAPTION>Value ICMS</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;VL. ICMS&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -24420,14 +23463,7 @@
                            <NAME>
                             <INAME>%TEXT26</INAME>
                            </NAME>
-                           <CAPTION>Base Calc. ICMS ST</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;BC. ICMS ST&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -24541,14 +23577,7 @@
                            <NAME>
                             <INAME>%TEXT28</INAME>
                            </NAME>
-                           <CAPTION>Valor Calc. ICMS ST</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;VL. ICMS ST&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -24662,14 +23691,7 @@
                            <NAME>
                             <INAME>VIPI_HEADER</INAME>
                            </NAME>
-                           <CAPTION>Value IPI</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;VL. IPI&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -24783,14 +23805,7 @@
                            <NAME>
                             <INAME>AICMS_HEADER</INAME>
                            </NAME>
-                           <CAPTION>Rate ICMS</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;TT&gt;AL. ICMS  &lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -24904,14 +23919,7 @@
                            <NAME>
                             <INAME>AIPI_HEADER</INAME>
                            </NAME>
-                           <CAPTION>Rate IPI</CAPTION>
                            <APPMODE>P</APPMODE>
-                           <TEXT>
-                            <item>
-                             <TDFORMAT>PI</TDFORMAT>
-                             <TDLINE>&lt;CC&gt;AL. IPI&lt;/&gt;</TDLINE>
-                            </item>
-                           </TEXT>
                            <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
@@ -25115,7 +24123,6 @@
               <NAME>
                <INAME>WIN_ENTR_EXIT</INAME>
               </NAME>
-              <CAPTION>Entr/Exit</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -25138,7 +24145,6 @@
                      <NAME>
                       <INAME>CODE_DANFE</INAME>
                      </NAME>
-                     <CAPTION>DANFE Ent/Exit</CAPTION>
                      <PLIST>
                       <item>
                        <OPD>NOTA_FISCAL-NOTA_FISCAL</OPD>
@@ -25204,7 +24210,6 @@
                      <NAME>
                       <INAME>ENTR_EXIT</INAME>
                      </NAME>
-                     <CAPTION>Entr/Exit</CAPTION>
                      <NOLANGUAGE>X</NOLANGUAGE>
                      <APPMODE>P</APPMODE>
                      <TEXT>
@@ -25330,7 +24335,6 @@
               <NAME>
                <INAME>WIN_BOXDANFE</INAME>
               </NAME>
-              <CAPTION>Quadro Contorno Danfe</CAPTION>
               <WTYPE>L</WTYPE>
               <T_CAPTION>
                <item>
@@ -25353,7 +24357,6 @@
                      <NAME>
                       <INAME>BOXDANFE</INAME>
                      </NAME>
-                     <CAPTION>Quadro Contorno Danfe</CAPTION>
                      <SECTTYPE>C</SECTTYPE>
                      <TABHTYPE>I</TABHTYPE>
                      <OTABTYPE>D</OTABTYPE>
@@ -25449,7 +24452,6 @@
                         <NAME>
                          <INAME>%EVENT50</INAME>
                         </NAME>
-                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -25473,7 +24475,6 @@
                         <NAME>
                          <INAME>%EVENT51</INAME>
                         </NAME>
-                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -25495,7 +24496,6 @@
                            <NAME>
                             <INAME>UNICO</INAME>
                            </NAME>
-                           <CAPTION>Nova linha 2</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -25601,7 +24601,6 @@
                               <NAME>
                                <INAME>TEXT</INAME>
                               </NAME>
-                              <CAPTION>TEXTO_DANFE</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -25706,49 +24705,7 @@
                                  <NAME>
                                   <INAME>%TEXT19</INAME>
                                  </NAME>
-                                 <CAPTION>DANFE</CAPTION>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                  </item>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;EP&gt; &lt;/&gt;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;GD&gt;DANFE&lt;/&gt;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CP&gt;DOCUMENTO AUXILIAR DE&lt;/&gt;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CP&gt;NOTA FISCAL ELETRÔNICA &lt;/&gt;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt; 0 - ENTRADA&lt;/&gt;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt; 1 - SAÍDA&lt;/&gt;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Nº &amp;NOTA_FISCAL-NOTA_FISCAL-NFENUM&amp;&lt;/&gt;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;SÉRIE &amp;NOTA_FISCAL-NOTA_FISCAL-SERIES&amp;&lt;/&gt;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;FOLHA &amp;SFSY-PAGE&amp; /  &amp;sfsy-formpages&amp;&lt;/&gt;</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -25949,7 +24906,6 @@
                         <NAME>
                          <INAME>%EVENT52</INAME>
                         </NAME>
-                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -26011,7 +24967,6 @@
               <NAME>
                <INAME>VALOR_EXT</INAME>
               </NAME>
-              <CAPTION>VALOR_EXT</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -26034,25 +24989,7 @@
                      <NAME>
                       <INAME>%TEXT27</INAME>
                      </NAME>
-                     <CAPTION>Texto novo 27</CAPTION>
                      <APPMODE>P</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;CC&gt;VALOR POR EXTENSO&lt;/&gt;</TDLINE>
-                      </item>
-                      <item>
-                       <TDFORMAT>TE</TDFORMAT>
-                      </item>
-                      <item>
-                       <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;DT&gt;&amp;GV_VALOR_EXT&amp;&lt;/&gt;</TDLINE>
-                      </item>
-                      <item>
-                       <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;DT&gt;&amp;GV_VALOR_EXT2&amp;&lt;/&gt;</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -26202,7 +25139,6 @@
               <NAME>
                <INAME>WIN_INFO_ADD</INAME>
               </NAME>
-              <CAPTION>Additional information</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -26225,7 +25161,6 @@
                      <NAME>
                       <INAME>%CODE10</INAME>
                      </NAME>
-                     <CAPTION>Controle Paginas Texto Add</CAPTION>
                      <PLIST>
                       <item>
                        <OPD>IT_ADDDATA</OPD>
@@ -26378,7 +25313,6 @@
                      <NAME>
                       <INAME>BUSCA_FUNDO_DE_POBREZA</INAME>
                      </NAME>
-                     <CAPTION>BUSCA_FUNDO_DE_POBREZA</CAPTION>
                      <PLIST>
                       <item>
                        <OPD>NOTA_FISCAL</OPD>
@@ -26530,7 +25464,6 @@
                      <NAME>
                       <INAME>GET_SUFRAMA</INAME>
                      </NAME>
-                     <CAPTION>GET_SUFRAMA</CAPTION>
                      <PLIST>
                       <item>
                        <OPD>NOTA_FISCAL</OPD>
@@ -26669,7 +25602,6 @@
                      <NAME>
                       <INAME>BUSCA_ROMANEIO</INAME>
                      </NAME>
-                     <CAPTION>Novas linhasPrograma 2</CAPTION>
                      <PLIST>
                       <item>
                        <OPD>NOTA_FISCAL</OPD>
@@ -26746,7 +25678,6 @@
                      <NAME>
                       <INAME>TXT_ROMANEIO</INAME>
                      </NAME>
-                     <CAPTION>Texto novo 1</CAPTION>
                      <NOLANGUAGE>X</NOLANGUAGE>
                      <APPMODE>P</APPMODE>
                      <TEXT>
@@ -26867,7 +25798,6 @@
               <NAME>
                <INAME>ITEM</INAME>
               </NAME>
-              <CAPTION>Item</CAPTION>
               <WTYPE>M</WTYPE>
               <WCOPYMODE>3</WCOPYMODE>
               <T_CAPTION>
@@ -26891,7 +25821,6 @@
                      <NAME>
                       <INAME>TABLE_PRODUCTS</INAME>
                      </NAME>
-                     <CAPTION>Products / Services</CAPTION>
                      <SECTTYPE>C</SECTTYPE>
                      <TABHTYPE>I</TABHTYPE>
                      <OTABTYPE>D</OTABTYPE>
@@ -27797,7 +26726,6 @@
                         <NAME>
                          <INAME>%EVENT17</INAME>
                         </NAME>
-                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -27821,7 +26749,6 @@
                         <NAME>
                          <INAME>%EVENT18</INAME>
                         </NAME>
-                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -27843,7 +26770,6 @@
                            <NAME>
                             <INAME>LOOP_ITEM</INAME>
                            </NAME>
-                           <CAPTION>Loop of Item</CAPTION>
                            <SECTTYPE>L</SECTTYPE>
                            <DATATYPE>L</DATATYPE>
                            <TABNAME>NOTA_FISCAL-ITEM</TABNAME>
@@ -27948,7 +26874,6 @@
                            <NAME>
                             <INAME>%CONDITION14</INAME>
                            </NAME>
-                           <CAPTION>Nova alternativa 14</CAPTION>
                            <COND>
                             <item>
                              <COP>NE</COP>
@@ -27977,7 +26902,6 @@
                               <NAME>
                                <INAME>LINE_PRODUCTS</INAME>
                               </NAME>
-                              <CAPTION>Products</CAPTION>
                               <SECTTYPE>R</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -28083,7 +27007,6 @@
                                  <NAME>
                                   <INAME>D_PRODUCT</INAME>
                                  </NAME>
-                                 <CAPTION>Product</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -28188,7 +27111,6 @@
                                     <NAME>
                                      <INAME>COD_MAT</INAME>
                                     </NAME>
-                                    <CAPTION>Ajusta código material</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM</OPD>
@@ -28248,7 +27170,6 @@
                                     <NAME>
                                      <INAME>C_VTOTALNF</INAME>
                                     </NAME>
-                                    <CAPTION>Product</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -28351,7 +27272,6 @@
                                     <NAME>
                                      <INAME>%CONDITION1</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 1</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -28385,7 +27305,6 @@
                                  <NAME>
                                   <INAME>D_DESCRIPTION</INAME>
                                  </NAME>
-                                 <CAPTION>Description</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -28490,7 +27409,6 @@
                                     <NAME>
                                      <INAME>NFNUM</INAME>
                                     </NAME>
-                                    <CAPTION>num notafiscal</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM</OPD>
@@ -28632,7 +27550,6 @@
                                     <NAME>
                                      <INAME>FCP</INAME>
                                     </NAME>
-                                    <CAPTION>InfAdProd</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM</OPD>
@@ -29267,7 +28184,6 @@
                                     <NAME>
                                      <INAME>DESCRIPTION</INAME>
                                     </NAME>
-                                    <CAPTION>Description</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -29298,7 +28214,6 @@
                                     <NAME>
                                      <INAME>%CONDITION10</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 10</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -29329,7 +28244,6 @@
                                     <NAME>
                                      <INAME>ICMSDESON</INAME>
                                     </NAME>
-                                    <CAPTION>ICMS Desonerado</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -29360,7 +28274,6 @@
                                     <NAME>
                                      <INAME>%CONDITION8</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 10</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -29391,7 +28304,6 @@
                                     <NAME>
                                      <INAME>FCP</INAME>
                                     </NAME>
-                                    <CAPTION>FCP</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -29422,7 +28334,6 @@
                                     <NAME>
                                      <INAME>%CONDITION19</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 19</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -29456,7 +28367,6 @@
                                  <NAME>
                                   <INAME>D_NCM</INAME>
                                  </NAME>
-                                 <CAPTION>NCM/SH</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -29561,7 +28471,6 @@
                                     <NAME>
                                      <INAME>NCM</INAME>
                                     </NAME>
-                                    <CAPTION>NCM/SH</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -29601,7 +28510,6 @@
                                  <NAME>
                                   <INAME>D_CST</INAME>
                                  </NAME>
-                                 <CAPTION>CST</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -29706,7 +28614,6 @@
                                     <NAME>
                                      <INAME>CST</INAME>
                                     </NAME>
-                                    <CAPTION>CST</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -29746,7 +28653,6 @@
                                  <NAME>
                                   <INAME>D_CFOP</INAME>
                                  </NAME>
-                                 <CAPTION>CFOP</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -29851,7 +28757,6 @@
                                     <NAME>
                                      <INAME>CFOP</INAME>
                                     </NAME>
-                                    <CAPTION>CFOP</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -29891,7 +28796,6 @@
                                  <NAME>
                                   <INAME>D_UNIT</INAME>
                                  </NAME>
-                                 <CAPTION>Unit</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -30053,7 +28957,6 @@
                                     <NAME>
                                      <INAME>UNIT</INAME>
                                     </NAME>
-                                    <CAPTION>Unit</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -30165,7 +29068,6 @@
                                  <NAME>
                                   <INAME>D_QTL</INAME>
                                  </NAME>
-                                 <CAPTION>Quantity</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -30270,7 +29172,6 @@
                                     <NAME>
                                      <INAME>%CODE6</INAME>
                                     </NAME>
-                                    <CAPTION>2 casas após a vírgula</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM-NFQTY</OPD>
@@ -30338,7 +29239,6 @@
                                     <NAME>
                                      <INAME>QTD</INAME>
                                     </NAME>
-                                    <CAPTION>Quantity</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -30369,7 +29269,6 @@
                                     <NAME>
                                      <INAME>%CONDITION2</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 2</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -30403,7 +29302,6 @@
                                  <NAME>
                                   <INAME>D_VUNIT</INAME>
                                  </NAME>
-                                 <CAPTION>Value Unit</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -30508,7 +29406,6 @@
                                     <NAME>
                                      <INAME>CONVERTE_NFPRI</INAME>
                                     </NAME>
-                                    <CAPTION>2 casas após a vírgula</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM-NFPRI</OPD>
@@ -30572,7 +29469,6 @@
                                     <NAME>
                                      <INAME>VUNIT</INAME>
                                     </NAME>
-                                    <CAPTION>Value Unit</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -30603,7 +29499,6 @@
                                     <NAME>
                                      <INAME>%CONDITION3</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 3</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -30637,7 +29532,6 @@
                                  <NAME>
                                   <INAME>D_VTOTAL</INAME>
                                  </NAME>
-                                 <CAPTION>Total value</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -30742,7 +29636,6 @@
                                     <NAME>
                                      <INAME>%CODE11</INAME>
                                     </NAME>
-                                    <CAPTION>Novas linhasPrograma 11</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM-NFNET</OPD>
@@ -30806,7 +29699,6 @@
                                     <NAME>
                                      <INAME>%TEXT1</INAME>
                                     </NAME>
-                                    <CAPTION>Total value</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -30837,7 +29729,6 @@
                                     <NAME>
                                      <INAME>%CONDITION18</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 4</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -30871,7 +29762,6 @@
                                  <NAME>
                                   <INAME>D_DESC</INAME>
                                  </NAME>
-                                 <CAPTION>Coluna nova 2</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -30976,7 +29866,6 @@
                                     <NAME>
                                      <INAME>%CODE3</INAME>
                                     </NAME>
-                                    <CAPTION>2 casas após a vírgula</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM</OPD>
@@ -31036,7 +29925,6 @@
                                     <NAME>
                                      <INAME>%TEXT30</INAME>
                                     </NAME>
-                                    <CAPTION>DESCONTO</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -31067,7 +29955,6 @@
                                     <NAME>
                                      <INAME>%CONDITION5</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 5</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -31101,7 +29988,6 @@
                                  <NAME>
                                   <INAME>D_BC_ICMS</INAME>
                                  </NAME>
-                                 <CAPTION>Bc ICMS</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -31206,7 +30092,6 @@
                                     <NAME>
                                      <INAME>%CODE1</INAME>
                                     </NAME>
-                                    <CAPTION>Novas linhasPrograma 1</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>TAB_ITEM_TAX</OPD>
@@ -31481,7 +30366,6 @@
                                     <NAME>
                                      <INAME>%TEXT34</INAME>
                                     </NAME>
-                                    <CAPTION>Texto novo 34</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -31512,7 +30396,6 @@
                                     <NAME>
                                      <INAME>%CONDITION12</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 12</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -31546,7 +30429,6 @@
                                  <NAME>
                                   <INAME>D_VICMS</INAME>
                                  </NAME>
-                                 <CAPTION>Value  ICMS</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -31651,7 +30533,6 @@
                                     <NAME>
                                      <INAME>VICMS</INAME>
                                     </NAME>
-                                    <CAPTION>Value ICMS</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -31682,7 +30563,6 @@
                                     <NAME>
                                      <INAME>%CONDITION6</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 6</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -31716,7 +30596,6 @@
                                  <NAME>
                                   <INAME>D_BC_ICMS_ST</INAME>
                                  </NAME>
-                                 <CAPTION>BC ICMS ST</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -31821,7 +30700,6 @@
                                     <NAME>
                                      <INAME>CALCULO</INAME>
                                     </NAME>
-                                    <CAPTION>BASE DO ICMS ST</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM</OPD>
@@ -31918,7 +30796,6 @@
                                     <NAME>
                                      <INAME>%TEXT32</INAME>
                                     </NAME>
-                                    <CAPTION>Base Calc. ICMS ST</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -31949,7 +30826,6 @@
                                     <NAME>
                                      <INAME>%CONDITION15</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 5</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -31983,7 +30859,6 @@
                                  <NAME>
                                   <INAME>D_VICMS_ST</INAME>
                                  </NAME>
-                                 <CAPTION>VL ICMS ST</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -32088,7 +30963,6 @@
                                     <NAME>
                                      <INAME>CALCULO_VAL</INAME>
                                     </NAME>
-                                    <CAPTION>Valor ICMS ST</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM</OPD>
@@ -32185,7 +31059,6 @@
                                     <NAME>
                                      <INAME>%TEXT33</INAME>
                                     </NAME>
-                                    <CAPTION>Val Calc. ICMS ST</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -32216,7 +31089,6 @@
                                     <NAME>
                                      <INAME>%CONDITION17</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 5</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -32250,7 +31122,6 @@
                                  <NAME>
                                   <INAME>D_VIPI</INAME>
                                  </NAME>
-                                 <CAPTION>Value IPI</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -32355,7 +31226,6 @@
                                     <NAME>
                                      <INAME>%CODE12</INAME>
                                     </NAME>
-                                    <CAPTION>Novas linhasPrograma 12</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM</OPD>
@@ -32428,7 +31298,6 @@
                                     <NAME>
                                      <INAME>VIPI</INAME>
                                     </NAME>
-                                    <CAPTION>Value IPI</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -32459,7 +31328,6 @@
                                     <NAME>
                                      <INAME>%CONDITION7</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 7</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -32493,7 +31361,6 @@
                                  <NAME>
                                   <INAME>D_AICMS</INAME>
                                  </NAME>
-                                 <CAPTION>Rate ICMS</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -32598,7 +31465,6 @@
                                     <NAME>
                                      <INAME>%CODE13</INAME>
                                     </NAME>
-                                    <CAPTION>Novas linhasPrograma 13</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM</OPD>
@@ -32668,7 +31534,6 @@
                                     <NAME>
                                      <INAME>ICMS</INAME>
                                     </NAME>
-                                    <CAPTION>Rate ICMS</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -32699,7 +31564,6 @@
                                     <NAME>
                                      <INAME>%CONDITION4</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 4</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -32733,7 +31597,6 @@
                                  <NAME>
                                   <INAME>D_AIPI</INAME>
                                  </NAME>
-                                 <CAPTION>Rate IPI</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -32838,7 +31701,6 @@
                                     <NAME>
                                      <INAME>%CODE14</INAME>
                                     </NAME>
-                                    <CAPTION>Novas linhasPrograma 14</CAPTION>
                                     <PLIST>
                                      <item>
                                       <OPD>ITEM</OPD>
@@ -32915,7 +31777,6 @@
                                     <NAME>
                                      <INAME>AIPI</INAME>
                                     </NAME>
-                                    <CAPTION>Rate IPI</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -32946,7 +31807,6 @@
                                     <NAME>
                                      <INAME>%CONDITION9</INAME>
                                     </NAME>
-                                    <CAPTION>Nova alternativa 9</CAPTION>
                                     <COND>
                                      <item>
                                       <COP>NE</COP>
@@ -32989,7 +31849,6 @@
                         <NAME>
                          <INAME>%EVENT19</INAME>
                         </NAME>
-                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -33018,7 +31877,6 @@
               <NAME>
                <INAME>%OUTATTRIB1</INAME>
               </NAME>
-              <CAPTION>Nova opção de saída</CAPTION>
               <U_WFRAME>PT</U_WFRAME>
               <U_WBOXV>CM</U_WBOXV>
               <U_WBOXH>CM</U_WBOXH>
@@ -33102,7 +31960,6 @@
               <NAME>
                <INAME>WIN_RESERV_FISCO</INAME>
               </NAME>
-              <CAPTION>Reserved in Fisco</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -33125,14 +31982,7 @@
                      <NAME>
                       <INAME>RESERV_FISCO</INAME>
                      </NAME>
-                     <CAPTION>Reserved in Fisco</CAPTION>
                      <APPMODE>P</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;CC&gt;RESERVADO AO FISCO&lt;/&gt;</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -33256,7 +32106,6 @@
               <NAME>
                <INAME>WIN_FOOTER2</INAME>
               </NAME>
-              <CAPTION>Footer</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -33279,7 +32128,6 @@
                      <NAME>
                       <INAME>TEMPLATE_FOOTER</INAME>
                      </NAME>
-                     <CAPTION>Footer</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
