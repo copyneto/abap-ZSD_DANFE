@@ -10701,13 +10701,10 @@
                                   </item>
                                   <item>
                                    <TDFORMAT>PG</TDFORMAT>
-                                   <TDLINE>&lt;CQ&gt;&amp;NOTA_FISCAL-NFE-AUTHCOD&amp;&lt;/&gt;&lt;CQ&gt;   &amp;NOTA_FISCAL-NFE-ACTION_DATE&amp;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <TDLINE>  &amp;NOTA_FISCAL-NFE-ACTION_TIME&amp;&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CQ&gt;      &lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
-                                 <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
+                                 <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
                                   <NCOLS>0</NCOLS>
@@ -10739,15 +10736,7 @@
                                    <INAME>%TEXT21</INAME>
                                    <LINENR>000002</LINENR>
                                    <TDFORMAT>PG</TDFORMAT>
-                                   <TDLINE>&lt;CQ&gt;&amp;NOTA_FISCAL-NFE-AUTHCOD&amp;&lt;/&gt;&lt;CQ&gt;   &amp;NOTA_FISCAL-NFE-ACTION_DATE&amp;</TDLINE>
-                                  </item>
-                                  <item>
-                                   <SPRAS>P</SPRAS>
-                                   <TXTYPE>F</TXTYPE>
-                                   <FORMNAME>ZSFSD_NFDANFE</FORMNAME>
-                                   <INAME>%TEXT21</INAME>
-                                   <LINENR>000003</LINENR>
-                                   <TDLINE>  &amp;NOTA_FISCAL-NFE-ACTION_TIME&amp;&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CQ&gt;      &lt;/&gt;</TDLINE>
                                   </item>
                                  </T_TEXT>
                                 </sf:TEXT>
@@ -10856,6 +10845,93 @@
                             <sf:SUCC>
                              <sf:item>
                               <sf:NODE>
+                               <NODETYPE>CO</NODETYPE>
+                               <sf:OBJ>
+                                <sf:CODE>
+                                 <NAME>
+                                  <INAME>%CODE22</INAME>
+                                 </NAME>
+                                 <CAPTION>Novas linhasPrograma 22</CAPTION>
+                                 <PLIST>
+                                  <item>
+                                   <OPD>NOTA_FISCAL-NFE-AUTHDATE</OPD>
+                                   <OUTIN>I</OUTIN>
+                                  </item>
+                                  <item>
+                                   <OPD>NOTA_FISCAL-NFE-AUTHTIME</OPD>
+                                   <OUTIN>I</OUTIN>
+                                  </item>
+                                  <item>
+                                   <OPD>NOTA_FISCAL-NOTA_FISCAL-BUKRS</OPD>
+                                   <OUTIN>I</OUTIN>
+                                  </item>
+                                  <item>
+                                   <OPD>NOTA_FISCAL-NOTA_FISCAL-BRANCH</OPD>
+                                   <OUTIN>I</OUTIN>
+                                  </item>
+                                  <item>
+                                   <OPD>NOTA_FISCAL-NFE-AUTHDATE</OPD>
+                                   <OUTIN>O</OUTIN>
+                                  </item>
+                                  <item>
+                                   <OPD>NOTA_FISCAL-NFE-AUTHTIME</OPD>
+                                   <OUTIN>O</OUTIN>
+                                  </item>
+                                 </PLIST>
+                                 <CODE>
+                                  <item>* LSCHEPP - 8000006757, EXTIPI E HORÁRIO DE SAÍDA - 05.05.2023 Início</item>
+                                  <item>CONSTANTS lc_hour TYPE thour VALUE &apos;1.00-&apos;.</item>
+                                  <item/>
+                                  <item>IF nota_fiscal-nota_fiscal-bukrs EQ &apos;3600&apos; AND</item>
+                                  <item>   nota_fiscal-nota_fiscal-branch EQ &apos;CB23&apos;.</item>
+                                  <item>  CALL FUNCTION &apos;CATT_ADD_TO_TIME&apos;</item>
+                                  <item>    EXPORTING</item>
+                                  <item>      idate = nota_fiscal-nfe-authdate</item>
+                                  <item>      itime = nota_fiscal-nfe-authtime</item>
+                                  <item>      stdaz = lc_hour</item>
+                                  <item>    IMPORTING</item>
+                                  <item>      edate = nota_fiscal-nfe-authdate</item>
+                                  <item>      etime = nota_fiscal-nfe-authtime.</item>
+                                  <item>ENDIF.</item>
+                                  <item>* LSCHEPP - 8000006757, EXTIPI E HORÁRIO DE SAÍDA - 05.05.2023 Fim</item>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                 </CODE>
+                                 <T_CAPTION>
+                                  <item>
+                                   <LANGU>P</LANGU>
+                                   <FORMNAME>ZSFSD_NFDANFE</FORMNAME>
+                                   <OBJTYPE>CO</OBJTYPE>
+                                   <INAME>%CODE22</INAME>
+                                   <CAPTION>Novas linhasPrograma 22</CAPTION>
+                                  </item>
+                                 </T_CAPTION>
+                                </sf:CODE>
+                               </sf:OBJ>
+                               <sf:SUCC/>
+                              </sf:NODE>
+                             </sf:item>
+                             <sf:item>
+                              <sf:NODE>
                                <NODETYPE>TI</NODETYPE>
                                <sf:OBJ>
                                 <sf:TEXT>
@@ -10871,13 +10947,13 @@
                                   </item>
                                   <item>
                                    <TDFORMAT>PG</TDFORMAT>
-                                   <TDLINE>&lt;CQ&gt;&amp;NOTA_FISCAL-NFE-AUTHCOD&amp;&lt;/&gt;&lt;CQ&gt;   &amp;NOTA_FISCAL-NFE-AUTHDATE&amp;</TDLINE>
+                                   <TDLINE>&lt;CQ&gt;&amp;NOTA_FISCAL-NFE-AUTHCOD&amp;   &amp;NOTA_FISCAL-NFE-AUTHDATE&amp;</TDLINE>
                                   </item>
                                   <item>
                                    <TDLINE>  &amp;NOTA_FISCAL-NFE-AUTHTIME&amp;&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
-                                 <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
+                                 <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
                                   <NCOLS>0</NCOLS>
@@ -10909,7 +10985,7 @@
                                    <INAME>%TEXT22</INAME>
                                    <LINENR>000002</LINENR>
                                    <TDFORMAT>PG</TDFORMAT>
-                                   <TDLINE>&lt;CQ&gt;&amp;NOTA_FISCAL-NFE-AUTHCOD&amp;&lt;/&gt;&lt;CQ&gt;   &amp;NOTA_FISCAL-NFE-AUTHDATE&amp;</TDLINE>
+                                   <TDLINE>&lt;CQ&gt;&amp;NOTA_FISCAL-NFE-AUTHCOD&amp;   &amp;NOTA_FISCAL-NFE-AUTHDATE&amp;</TDLINE>
                                   </item>
                                   <item>
                                    <SPRAS>P</SPRAS>
