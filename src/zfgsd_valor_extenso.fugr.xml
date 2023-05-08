@@ -10,6 +10,7 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMSD_VALOR_EXTENSO</FUNCNAME>
+     <SHORT_TEXT>Tratamento valor por extenso</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_VALOR</PARAMETER>
@@ -28,10 +29,12 @@
       <RSFDO>
        <PARAMETER>IV_VALOR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Montante</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_VALOR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Montante por extenso</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

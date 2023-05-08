@@ -13,6 +13,7 @@
     <LANGUAGE>P</LANGUAGE>
     <OBJECTNAME>ZTSD_NFEFCPDANFE</OBJECTNAME>
     <OBJECTTYPE>S</OBJECTTYPE>
+    <DDTEXT>Tabela para separar o valor do ICMS do FCP por estado</DDTEXT>
    </OBJT>
    <OBJS>
     <OBJS>
