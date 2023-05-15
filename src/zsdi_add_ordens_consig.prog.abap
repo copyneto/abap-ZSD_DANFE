@@ -104,6 +104,24 @@ IF <fs_nfetx_tab> IS ASSIGNED.
       DATA(lv_nfenum) = CONV j_1bnfnum9( lv_xblnr ).
       DATA(lv_docdat) =  lv_budat_mkpf.
 
+* LSCHEPP - SD - 8000007294 - Danfe x XML Dev Despesa Sem mens referen - 15.05.2023 Início
+      IF lv_docdat IS INITIAL.
+        SELECT SINGLE vbelv
+          FROM vbfa
+         WHERE vbeln   EQ @<fs_vbrp1>-vgbel
+           AND posnn   EQ @<fs_vbrp1>-vgpos
+           AND vbtyp_v EQ 'M'
+          INTO @DATA(lv_vbelv1).
+        IF sy-subrc EQ 0.
+          SELECT SINGLE a~docdat
+            FROM j_1bnfdoc AS a
+            INNER JOIN j_1bnflin AS b ON a~docnum = b~docnum
+            INTO @lv_docdat
+            WHERE b~refkey EQ @lv_vbelv1.
+        ENDIF.
+      ENDIF.
+* LSCHEPP - SD - 8000007294 - Danfe x XML Dev Despesa Sem mens referen - 15.05.2023 Fim
+
       CALL FUNCTION 'CONVERSION_EXIT_PDATE_OUTPUT'
         EXPORTING
           input        = lv_docdat

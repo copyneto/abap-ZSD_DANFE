@@ -74,6 +74,10 @@
 
              ENDIF.
 
+* LSCHEPP - SD - 8000007091 - Valor do diferimento - 12.05.2023 Início
+             CLEAR lv_kbetr.
+* LSCHEPP - SD - 8000007091 - Valor do diferimento - 12.05.2023 Fim
+
            ENDIF.
 
          ENDIF.
@@ -102,7 +106,11 @@
          lv_linhas = |{ lv_linhas } { 'EXTIPI' }: { <fs_nflin>-nbm+11(2) }|.
        ENDIF.
 
-       IF <fs_nflin>-taxsit NE '1'.
+* LSCHEPP - SD - 8000007091 - Valor do diferimento - 12.05.2023 Início
+*       IF <fs_nflin>-taxsit NE '1'.
+       IF <fs_nflin>-taxsit EQ '1' OR
+          <fs_nflin>-taxsit EQ 'B'.
+* LSCHEPP - SD - 8000007091 - Valor do diferimento - 12.05.2023 Fim
          IF lv_vicmsdif IS NOT INITIAL.
 * LSCHEPP - 8000006816 - Dados adicionais - DANFE e XML - 03.05.2023 Início
 *           lv_linhas = |{ lv_linhas } { 'ITEM' }: { lv_matnr } { TEXT-f17 }: { lv_vicmsdif }|.
