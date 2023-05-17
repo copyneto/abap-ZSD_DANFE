@@ -105,7 +105,8 @@ IF <fs_nfetx_tab> IS ASSIGNED.
       DATA(lv_docdat) =  lv_budat_mkpf.
 
 * LSCHEPP - SD - 8000007294 - Danfe x XML Dev Despesa Sem mens referen - 15.05.2023 Início
-      IF lv_docdat IS INITIAL.
+      IF lv_docdat IS INITIAL OR
+         lv_nfenum IS INITIAL.
         SELECT SINGLE vbelv
           FROM vbfa
          WHERE vbeln   EQ @<fs_vbrp1>-vgbel
@@ -113,10 +114,10 @@ IF <fs_nfetx_tab> IS ASSIGNED.
            AND vbtyp_v EQ 'M'
           INTO @DATA(lv_vbelv1).
         IF sy-subrc EQ 0.
-          SELECT SINGLE a~docdat
+          SELECT SINGLE a~nfenum, a~docdat
             FROM j_1bnfdoc AS a
             INNER JOIN j_1bnflin AS b ON a~docnum = b~docnum
-            INTO @lv_docdat
+            INTO ( @lv_nfenum, @lv_docdat )
             WHERE b~refkey EQ @lv_vbelv1.
         ENDIF.
       ENDIF.
