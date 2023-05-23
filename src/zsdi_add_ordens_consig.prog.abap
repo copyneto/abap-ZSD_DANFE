@@ -7,6 +7,8 @@ CONSTANTS:
   lc_fkart_yr62(4) TYPE c VALUE 'YR62',
   lc_fkart_yd62(4) TYPE c VALUE 'YD62',
   lc_fkart_yr65(4) TYPE c VALUE 'YR65',
+  lc_fkart_zd00(4) TYPE c VALUE 'ZD00',
+  lc_fkart_yd00(4) TYPE c VALUE 'YD00',
   lc_fkart_z010(4) TYPE c VALUE 'Z010',
   lc_vbbp(4)       TYPE c VALUE 'VBBP',
   lc_z010          TYPE tdid VALUE 'Z010',
@@ -470,6 +472,15 @@ IF <fs_nfetx_tab> IS ASSIGNED.
 
           REPLACE '&1' IN lv_texto WITH lv_nfenum.
           REPLACE '&2' IN lv_texto WITH lv_docdate.
+
+* LSCHEPP - SD - 8000007651 - Mensagem ZD00 e YD00 - 23.05.2023 Início
+          IF is_vbrk-fkart EQ lc_fkart_zd00 OR
+             is_vbrk-fkart EQ lc_fkart_yd00.
+            CLEAR: lv_nfenum,
+                   lv_docdate,
+                   lv_texto.
+          ENDIF.
+* LSCHEPP - SD - 8000007651 - Mensagem ZD00 e YD00 - 23.05.2023 Fim
 
           IF lv_texto IS NOT INITIAL.
 

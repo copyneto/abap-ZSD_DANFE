@@ -34,7 +34,10 @@
      SEARCH cs_header-infcpl FOR TEXT-f49.
      IF sy-subrc NE 0.
 * LSCHEPP - 8000006297 - Erro Dados Adicionais NF Distrato MACRO - 05.04.2023 Fim
-       lv_texto = |{ TEXT-f54 }: { is_vbrk-bstnk_vf }|.
+       SEARCH cs_header-infcpl FOR TEXT-f54.
+       IF sy-subrc NE 0.
+         lv_texto = |{ TEXT-f54 }: { is_vbrk-bstnk_vf }|.
+       ENDIF.
 * LSCHEPP - 8000006297 - Erro Dados Adicionais NF Distrato MACRO - 05.04.2023 Início
      ENDIF.
 * LSCHEPP - 8000006297 - Erro Dados Adicionais NF Distrato MACRO - 05.04.2023 Fim
@@ -46,7 +49,10 @@
        SEARCH cs_header-infcpl FOR TEXT-f49.
        IF sy-subrc NE 0.
 * LSCHEPP - 8000006297 - Erro Dados Adicionais NF Distrato MACRO - 05.04.2023 Fim
-         lv_texto = |{ TEXT-f54 }: { <fs_lin>-xped }|.
+         SEARCH cs_header-infcpl FOR TEXT-f54.
+         IF sy-subrc NE 0.
+           lv_texto = |{ TEXT-f54 }: { <fs_lin>-xped }|.
+         ENDIF.
 * LSCHEPP - 8000006297 - Erro Dados Adicionais NF Distrato MACRO - 05.04.2023 Início
        ENDIF.
 * LSCHEPP - 8000006297 - Erro Dados Adicionais NF Distrato MACRO - 05.04.2023 Fim
