@@ -40,7 +40,7 @@
 
 * LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Início
    TYPES: BEGIN OF ty_fcp_values,
-            itmnum TYPE j_1bnfstx-itmnum,
+            matnr  TYPE j_1bnflin-matnr,
             taxtyp TYPE j_1bnfstx-taxtyp,
             base   TYPE j_1bnfstx-base,
             taxval TYPE j_1bnfstx-taxval,

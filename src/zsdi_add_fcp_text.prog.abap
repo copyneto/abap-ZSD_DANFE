@@ -38,7 +38,7 @@ IF sy-subrc = 0.
 *  lv_texto      = |{ TEXT-f30 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
 *  lv_base_fcp   = lv_base_fcp + <fs_taxtyp>-base.
 *  lv_taxval_fcp = lv_taxval_fcp + <fs_taxtyp>-taxval.
-  READ TABLE lt_fcp_values ASSIGNING FIELD-SYMBOL(<fs_fcp_values>) WITH KEY itmnum = <fs_nflin>-itmnum
+  READ TABLE lt_fcp_values ASSIGNING FIELD-SYMBOL(<fs_fcp_values>) WITH KEY matnr = <fs_nflin>-matnr
                                                                             taxtyp = lc_icsc BINARY SEARCH.
   IF sy-subrc EQ 0.
     lv_texto      = |{ TEXT-f30 } { <fs_fcp_values>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_fcp_values>-taxval }|.
@@ -75,7 +75,7 @@ IF sy-subrc = 0.
 *  lv_texto        = |{ TEXT-f33 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
 *  lv_base_fcpst   = lv_base_fcpst + <fs_taxtyp>-base.
 *  lv_taxval_fcpst = lv_taxval_fcpst + <fs_taxtyp>-taxval.
-  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY itmnum = <fs_nflin>-itmnum
+  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY matnr = <fs_nflin>-matnr
                                                               taxtyp = lc_icfp BINARY SEARCH.
   IF sy-subrc EQ 0.
     lv_texto        = |{ TEXT-f33 } { <fs_fcp_values>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_fcp_values>-taxval }|.
@@ -116,7 +116,7 @@ IF sy-subrc = 0.
 *  lv_texto      = |{ TEXT-f30 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
 *  lv_base_fcp   = lv_base_fcp + <fs_taxtyp>-base.
 *  lv_taxval_fcp = lv_taxval_fcp + <fs_taxtyp>-taxval.
-  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY itmnum = <fs_nflin>-itmnum
+  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY matnr = <fs_nflin>-matnr
                                                               taxtyp = lc_fcpo BINARY SEARCH.
   IF sy-subrc EQ 0.
     lv_texto        = |{ TEXT-f30 } { <fs_fcp_values>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_fcp_values>-taxval }|.
@@ -155,7 +155,7 @@ IF sy-subrc = 0.
 *  lv_texto      = |{ TEXT-f30 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
 *  lv_base_fcp   = lv_base_fcp + <fs_taxtyp>-base.
 *  lv_taxval_fcp = lv_taxval_fcp + <fs_taxtyp>-taxval.
-  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY itmnum = <fs_nflin>-itmnum
+  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY matnr = <fs_nflin>-matnr
                                                               taxtyp = lc_fcp3 BINARY SEARCH.
   IF sy-subrc EQ 0.
     lv_texto        = |{ TEXT-f30 } { <fs_fcp_values>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_fcp_values>-taxval }|.
@@ -194,7 +194,7 @@ IF sy-subrc = 0.
 *  lv_texto        = |{ TEXT-f33 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
 *  lv_base_fcpst   = lv_base_fcpst + <fs_taxtyp>-base.
 *  lv_taxval_fcpst = lv_taxval_fcpst + <fs_taxtyp>-taxval.
-  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY itmnum = <fs_nflin>-itmnum
+  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY matnr = <fs_nflin>-matnr
                                                               taxtyp = lc_fpso BINARY SEARCH.
   IF sy-subrc EQ 0.
     lv_texto        = |{ TEXT-f33 } { <fs_fcp_values>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_fcp_values>-taxval }|.
