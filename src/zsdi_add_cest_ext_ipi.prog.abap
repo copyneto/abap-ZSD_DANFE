@@ -2,10 +2,12 @@
 *& Include          ZSDI_ADD_CEST_EXT_IPI
 *&---------------------------------------------------------------------*
      DATA: lv_cest_mask TYPE j_1bnflin-cest,
-           lv_rate      TYPE i,
-           lv_vicms     TYPE f,
-           lv_vicmsop   TYPE f,
-           lv_vicmsdif1 TYPE f,
+* LSCHEPP - SD - 8000007675 - Junç itens Mens diferid e bc icms incorr - 24.05.2023 Início
+*           lv_rate      TYPE i,
+*           lv_vicms     TYPE f,
+*           lv_vicmsop   TYPE f,
+*           lv_vicmsdif1 TYPE f,
+* LSCHEPP - SD - 8000007675 - Junç itens Mens diferid e bc icms incorr - 24.05.2023 Fim
            lv_linhas    TYPE char950.
 
      DATA lt_linhas TYPE TABLE OF j_1bmessag.
@@ -23,65 +25,71 @@
 
        IF <fs_nflin>-reftyp = gc_fat.
 
-         READ TABLE lt_vbrp_aux ASSIGNING FIELD-SYMBOL(<fs_vbrp>) WITH KEY posnr = <fs_nflin>-refitm
-                                                                  BINARY SEARCH.
+* LSCHEPP - SD - 8000007675 - Junç itens Mens diferid e bc icms incorr - 24.05.2023 Início
+*         READ TABLE lt_vbrp_aux ASSIGNING FIELD-SYMBOL(<fs_vbrp>) WITH KEY posnr = <fs_nflin>-refitm
+*                                                                  BINARY SEARCH.
+*
+*         IF sy-subrc = 0.
+*
+*           READ TABLE lt_itens_add ASSIGNING FIELD-SYMBOL(<fs_item_adicional>) WITH KEY itmnum = <fs_nflin>-itmnum
+*                                                                               BINARY SEARCH.
+*
+*           IF sy-subrc = 0.
+*
+*             SELECT SINGLE knumv FROM vbak INTO @DATA(lv_knumv) WHERE vbeln = @<fs_vbrp>-aubel.
+*
+*             IF lv_knumv IS NOT INITIAL.
+*               SELECT prcd_elements~kbetr
+*                 FROM prcd_elements
+*                 INTO @DATA(lv_kbetr)
+*                 UP TO 1 ROWS
+*                 WHERE knumv = @lv_knumv
+*                   AND kposn = @<fs_vbrp>-aupos
+*                   AND kschl = @lc_kschl.
+*               ENDSELECT.
+*             ENDIF.
+*
+*             READ TABLE lt_wnfstx_tab ASSIGNING FIELD-SYMBOL(<fs_wnfstx>) WITH KEY docnum = <fs_nflin>-docnum
+*                                                                                   itmnum = <fs_nflin>-itmnum
+*                                                                                   taxtyp = lc_taxtyp BINARY SEARCH.
+*             IF sy-subrc = 0.
+*               lv_kzwi6_aux  = lv_kbetr.
+*               lv_novokzwi6  = 1 - ( lv_kzwi6_aux / 100 ).
+*               lv_vicmsdif1  = ( <fs_wnfstx>-taxval / lv_novokzwi6  ) * lv_kzwi6_aux.
+*
+*               lv_vicmsdif1 = lv_vicmsdif1 / 100.
+*
+*               IF  <fs_nflin>-taxsit EQ 'B'.
+*                 DATA(lv_rate_i) = <fs_wnfstx>-rate.
+*                 IF NOT <fs_wnfstx>-base IS INITIAL.
+*                   lv_rate = ( ( lv_vicmsdif1 + <fs_wnfstx>-taxval ) / <fs_wnfstx>-base ) * 100.
+*                   <fs_wnfstx>-rate = lv_rate.
+*
+*
+*                   lv_vicmsop = <fs_wnfstx>-rate * <fs_wnfstx>-base / 100.
+*                   lv_vicms = <fs_wnfstx>-base * lv_rate_i / 100.
+*                   lv_vicmsdif1 = lv_vicmsop - lv_vicms.
+*                   lv_vicmsdif = lv_vicmsdif1.
+*                 ENDIF.
+*               ELSE.
+*                 lv_vicmsdif = lv_vicmsdif1.
+*               ENDIF.
+*
+*             ENDIF.
+*
+** LSCHEPP - SD - 8000007091 - Valor do diferimento - 12.05.2023 Início
+*             CLEAR lv_kbetr.
+** LSCHEPP - SD - 8000007091 - Valor do diferimento - 12.05.2023 Fim
+*
+*           ENDIF.
+*
+*         ENDIF.
 
-         IF sy-subrc = 0.
-
-           READ TABLE lt_itens_add ASSIGNING FIELD-SYMBOL(<fs_item_adicional>) WITH KEY itmnum = <fs_nflin>-itmnum
-                                                                               BINARY SEARCH.
-
-           IF sy-subrc = 0.
-
-             SELECT SINGLE knumv FROM vbak INTO @DATA(lv_knumv) WHERE vbeln = @<fs_vbrp>-aubel.
-
-             IF lv_knumv IS NOT INITIAL.
-               SELECT prcd_elements~kbetr
-                 FROM prcd_elements
-                 INTO @DATA(lv_kbetr)
-                 UP TO 1 ROWS
-                 WHERE knumv = @lv_knumv
-                   AND kposn = @<fs_vbrp>-aupos
-                   AND kschl = @lc_kschl.
-               ENDSELECT.
-             ENDIF.
-
-             READ TABLE lt_wnfstx_tab ASSIGNING FIELD-SYMBOL(<fs_wnfstx>) WITH KEY docnum = <fs_nflin>-docnum
-                                                                                   itmnum = <fs_nflin>-itmnum
-                                                                                   taxtyp = lc_taxtyp BINARY SEARCH.
-             IF sy-subrc = 0.
-               lv_kzwi6_aux  = lv_kbetr.
-               lv_novokzwi6  = 1 - ( lv_kzwi6_aux / 100 ).
-               lv_vicmsdif1  = ( <fs_wnfstx>-taxval / lv_novokzwi6  ) * lv_kzwi6_aux.
-
-               lv_vicmsdif1 = lv_vicmsdif1 / 100.
-
-               IF  <fs_nflin>-taxsit EQ 'B'.
-                 DATA(lv_rate_i) = <fs_wnfstx>-rate.
-                 IF NOT <fs_wnfstx>-base IS INITIAL.
-                   lv_rate = ( ( lv_vicmsdif1 + <fs_wnfstx>-taxval ) / <fs_wnfstx>-base ) * 100.
-                   <fs_wnfstx>-rate = lv_rate.
-
-
-                   lv_vicmsop = <fs_wnfstx>-rate * <fs_wnfstx>-base / 100.
-                   lv_vicms = <fs_wnfstx>-base * lv_rate_i / 100.
-                   lv_vicmsdif1 = lv_vicmsop - lv_vicms.
-                   lv_vicmsdif = lv_vicmsdif1.
-                 ENDIF.
-               ELSE.
-                 lv_vicmsdif = lv_vicmsdif1.
-               ENDIF.
-
-             ENDIF.
-
-* LSCHEPP - SD - 8000007091 - Valor do diferimento - 12.05.2023 Início
-             CLEAR lv_kbetr.
-* LSCHEPP - SD - 8000007091 - Valor do diferimento - 12.05.2023 Fim
-
-           ENDIF.
-
+         READ TABLE lt_mont_dif ASSIGNING FIELD-SYMBOL(<fs_mont_dif>) WITH KEY matnr = <fs_nflin>-matnr BINARY SEARCH.
+         IF sy-subrc EQ 0.
+           lv_vicmsdif  = <fs_mont_dif>-vicmsdif.
          ENDIF.
-
+* LSCHEPP - SD - 8000007675 - Junç itens Mens diferid e bc icms incorr - 24.05.2023 Fim
        ENDIF.
 
        " calculo para montante: vicmsdif - fim

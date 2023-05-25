@@ -28,6 +28,28 @@
    DATA: lt_emenda_collect TYPE TABLE OF ty_emenda.
    DATA: lr_taxyp_emenda TYPE RANGE OF j_1bnfstx-taxtyp.
 
+* LSCHEPP - SD - 8000007675 - Junç itens Mens diferid e bc icms incorr - 24.05.2023 Início
+   TYPES: BEGIN OF ty_mont_dif,
+            matnr    TYPE j_1bnflin-matnr,
+            vicmsdif TYPE j_1bnfstx-taxval,
+          END OF ty_mont_dif.
+
+   DATA: lt_mont_dif TYPE TABLE OF ty_mont_dif,
+         ls_mont_dif TYPE ty_mont_dif.
+* LSCHEPP - SD - 8000007675 - Junç itens Mens diferid e bc icms incorr - 24.05.2023 Fim
+
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Início
+   TYPES: BEGIN OF ty_fcp_values,
+            itmnum TYPE j_1bnfstx-itmnum,
+            taxtyp TYPE j_1bnfstx-taxtyp,
+            base   TYPE j_1bnfstx-base,
+            taxval TYPE j_1bnfstx-taxval,
+          END OF ty_fcp_values.
+
+   DATA: lt_fcp_values TYPE TABLE OF ty_fcp_values,
+         ls_fcp_values TYPE ty_fcp_values.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Fim
+
    TYPES: ty_t_nfetx TYPE TABLE OF j_1bnfftx.
 
    DATA: lt_text_tab TYPE TABLE OF string,

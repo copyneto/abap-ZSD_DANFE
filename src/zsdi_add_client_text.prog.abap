@@ -9,7 +9,13 @@
          IF is_header-nftype EQ 'IM'. "Cenários E-commerce
            DATA(lv_name1) = it_partner[ parvw = 'AG' ]-name1.
          ELSE.
-           lv_name1 = it_partner[ parid = is_header-parid ]-name1.
+* LSCHEPP - SD - 8000007742 - DADOS GERAIS NF-NOME FANTASIA CLIENTE - 23.05.2023 Início
+*           lv_name1 = it_partner[ parid = is_header-parid ]-name1.
+           SELECT SINGLE bu_sort1
+             FROM but000
+             INTO @lv_name1
+             WHERE partner EQ @is_header-parid.
+* LSCHEPP - SD - 8000007742 - DADOS GERAIS NF-NOME FANTASIA CLIENTE - 23.05.2023 Fim
          ENDIF.
 * LSCHEPP - SD - 8000007263 - GAP 47 erro no XML cadastro do cliente - 12.05.2023 Fim
        CATCH cx_sy_itab_line_not_found.

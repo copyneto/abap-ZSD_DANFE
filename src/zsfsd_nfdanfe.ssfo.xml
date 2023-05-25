@@ -31251,7 +31251,19 @@
                                      <item>WRITE &apos;0,00&apos; TO vl_icmsval CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
                                      <item>CONDENSE vl_icmsval.</item>
                                      <item/>
-                                     <item>IF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
+                                     <item>* LSCHEPP - SD - 8000007675 - Junç itens Mens diferid e bc icms incorr - 23.05.2023 Início</item>
+                                     <item>SORT tab_item_tax BY docnum itmnum taxtyp.</item>
+                                     <item>READ TABLE tab_item_tax ASSIGNING FIELD-SYMBOL(&lt;fs_item_tax&gt;) WITH KEY docnum = item-docnum</item>
+                                     <item>                                                                       itmnum = item-itmnum</item>
+                                     <item>                                                                       taxtyp = &apos;ICM3&apos; BINARY SEARCH.</item>
+                                     <item>IF &lt;fs_item_tax&gt; IS ASSIGNED.</item>
+                                     <item>  WRITE &lt;fs_item_tax&gt;-base TO vl_baseicms CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
+                                     <item>  CONDENSE vl_baseicms.</item>
+                                     <item>  WRITE &lt;fs_item_tax&gt;-taxval TO vl_icmsval CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
+                                     <item>  CONDENSE vl_icmsval.</item>
+                                     <item>*IF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
+                                     <item>ELSEIF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
+                                     <item>* LSCHEPP - SD - 8000007675 - Junç itens Mens diferid e bc icms incorr - 23.05.2023 Fim</item>
                                      <item/>
                                      <item>  SELECT SINGLE base, taxval FROM j_1bnfstx</item>
                                      <item>    WHERE docnum = @item-docnum</item>
@@ -31270,7 +31282,7 @@
                                      <item/>
                                      <item>ELSE.</item>
                                      <item>  SORT tab_item_tax BY docnum itmnum taxtyp.</item>
-                                     <item>  READ TABLE tab_item_tax ASSIGNING FIELD-SYMBOL(&lt;fs_item_tax&gt;) WITH KEY docnum = item-docnum</item>
+                                     <item>  READ TABLE tab_item_tax ASSIGNING &lt;fs_item_tax&gt; WITH KEY docnum = item-docnum</item>
                                      <item>                                                                         itmnum = item-itmnum</item>
                                      <item>                                                                         taxtyp = &apos;ICM0&apos; BINARY SEARCH.</item>
                                      <item>  IF &lt;fs_item_tax&gt; IS ASSIGNED.</item>

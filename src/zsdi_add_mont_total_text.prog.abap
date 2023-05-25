@@ -11,7 +11,11 @@
        lv_seq = VALUE #( lt_nfetx[ 1 ]-seqnum DEFAULT 0 ).
        lv_linnum = VALUE #( lt_nfetx[ 1 ]-linnum DEFAULT 0 ).
        ADD 1 TO lv_seq.
-       lv_texto = |{ lv_texto } { TEXT-f20 }: { lv_mont_total }|.
+       IF lv_texto IS INITIAL.
+         lv_texto = |{ TEXT-f20 }: { lv_mont_total }|.
+       ELSE.
+         lv_texto = |{ lv_texto } { TEXT-f20 }: { lv_mont_total }|.
+       ENDIF.
        APPEND VALUE j_1bnfftx( seqnum = lv_seq linnum = lv_linnum message = lv_texto ) TO <fs_nfetx_tab>.
        SEARCH cs_header-infcpl FOR lv_texto.
        IF sy-subrc NE 0.

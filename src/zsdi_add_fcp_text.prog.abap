@@ -1,11 +1,13 @@
 *&---------------------------------------------------------------------*
 *& Include          ZSDI_ADD_FCP_TEXT
 *&---------------------------------------------------------------------*
-CONSTANTS:lc_icsc TYPE j_1btaxtyp VALUE 'ICSC',
-          lc_icfp TYPE j_1btaxtyp VALUE 'ICFP',
-          lc_fcpo TYPE j_1btaxtyp VALUE 'FCPO',
-          lc_fpso TYPE j_1btaxtyp VALUE 'FPSO',
-          lc_fcp3 TYPE j_1btaxtyp VALUE 'FCP3'.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Início
+*CONSTANTS:lc_icsc TYPE j_1btaxtyp VALUE 'ICSC',
+*          lc_icfp TYPE j_1btaxtyp VALUE 'ICFP',
+*          lc_fcpo TYPE j_1btaxtyp VALUE 'FCPO',
+*          lc_fpso TYPE j_1btaxtyp VALUE 'FPSO',
+*          lc_fcp3 TYPE j_1btaxtyp VALUE 'FCP3'.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Fim
 
 DATA: lv_aliq         TYPE char8,
       lv_zeros        TYPE char2,
@@ -16,10 +18,15 @@ DATA: lv_aliq         TYPE char8,
       lv_taxval_fcp   TYPE j_1bnfstx-taxval,
       lv_taxval_fcpst TYPE j_1bnfstx-taxval.
 
-DATA(lt_tax) = it_nfstx.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Início
+*DATA(lt_tax) = it_nfstx.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Fim
 SORT lt_tax BY itmnum taxtyp.
-READ TABLE lt_tax ASSIGNING FIELD-SYMBOL(<fs_taxtyp>) WITH KEY itmnum = <fs_nflin>-itmnum
-                                                               taxtyp = lc_icsc BINARY SEARCH.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Início
+*READ TABLE lt_tax ASSIGNING FIELD-SYMBOL(<fs_taxtyp>) WITH KEY itmnum = <fs_nflin>-itmnum
+READ TABLE lt_tax ASSIGNING <fs_taxtyp> WITH KEY itmnum = <fs_nflin>-itmnum
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Fim
+                                                 taxtyp = lc_icsc BINARY SEARCH.
 IF sy-subrc = 0.
 
   lv_aliq_fcp = <fs_taxtyp>-rate.
@@ -27,9 +34,18 @@ IF sy-subrc = 0.
   CONDENSE lv_aliq.
   SPLIT lv_aliq AT'.' INTO lv_aliq lv_zeros.
 
-  lv_texto      = |{ TEXT-f30 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
-  lv_base_fcp   = lv_base_fcp + <fs_taxtyp>-base.
-  lv_taxval_fcp = lv_taxval_fcp + <fs_taxtyp>-taxval.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Início
+*  lv_texto      = |{ TEXT-f30 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
+*  lv_base_fcp   = lv_base_fcp + <fs_taxtyp>-base.
+*  lv_taxval_fcp = lv_taxval_fcp + <fs_taxtyp>-taxval.
+  READ TABLE lt_fcp_values ASSIGNING FIELD-SYMBOL(<fs_fcp_values>) WITH KEY itmnum = <fs_nflin>-itmnum
+                                                                            taxtyp = lc_icsc BINARY SEARCH.
+  IF sy-subrc EQ 0.
+    lv_texto      = |{ TEXT-f30 } { <fs_fcp_values>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_fcp_values>-taxval }|.
+    lv_base_fcp   = lv_base_fcp + <fs_fcp_values>-base.
+    lv_taxval_fcp = lv_taxval_fcp + <fs_fcp_values>-taxval.
+  ENDIF.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Início
 
   IF lv_texto IS NOT INITIAL.
 
@@ -55,9 +71,18 @@ IF sy-subrc = 0.
   CONDENSE lv_aliq.
   SPLIT lv_aliq AT'.' INTO lv_aliq lv_zeros.
 
-  lv_texto        = |{ TEXT-f33 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
-  lv_base_fcpst   = lv_base_fcpst + <fs_taxtyp>-base.
-  lv_taxval_fcpst = lv_taxval_fcpst + <fs_taxtyp>-taxval.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Início
+*  lv_texto        = |{ TEXT-f33 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
+*  lv_base_fcpst   = lv_base_fcpst + <fs_taxtyp>-base.
+*  lv_taxval_fcpst = lv_taxval_fcpst + <fs_taxtyp>-taxval.
+  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY itmnum = <fs_nflin>-itmnum
+                                                              taxtyp = lc_icfp BINARY SEARCH.
+  IF sy-subrc EQ 0.
+    lv_texto        = |{ TEXT-f33 } { <fs_fcp_values>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_fcp_values>-taxval }|.
+    lv_base_fcpst   = lv_base_fcp + <fs_fcp_values>-base.
+    lv_taxval_fcpst = lv_taxval_fcp + <fs_fcp_values>-taxval.
+  ENDIF.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Fim
 
   IF lv_texto IS NOT INITIAL AND <fs_item_add>-infadprod IS ASSIGNED.
 
@@ -87,9 +112,18 @@ IF sy-subrc = 0.
   CONDENSE lv_aliq.
   SPLIT lv_aliq AT'.' INTO lv_aliq lv_zeros.
 
-  lv_texto      = |{ TEXT-f30 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
-  lv_base_fcp   = lv_base_fcp + <fs_taxtyp>-base.
-  lv_taxval_fcp = lv_taxval_fcp + <fs_taxtyp>-taxval.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Início
+*  lv_texto      = |{ TEXT-f30 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
+*  lv_base_fcp   = lv_base_fcp + <fs_taxtyp>-base.
+*  lv_taxval_fcp = lv_taxval_fcp + <fs_taxtyp>-taxval.
+  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY itmnum = <fs_nflin>-itmnum
+                                                              taxtyp = lc_fcpo BINARY SEARCH.
+  IF sy-subrc EQ 0.
+    lv_texto        = |{ TEXT-f30 } { <fs_fcp_values>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_fcp_values>-taxval }|.
+    lv_base_fcp   = lv_base_fcp + <fs_fcp_values>-base.
+    lv_taxval_fcp = lv_taxval_fcp + <fs_fcp_values>-taxval.
+  ENDIF.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Fim
 
   IF lv_texto IS NOT INITIAL.
 
@@ -117,9 +151,18 @@ IF sy-subrc = 0.
   CONDENSE lv_aliq.
   SPLIT lv_aliq AT'.' INTO lv_aliq lv_zeros.
 
-  lv_texto      = |{ TEXT-f30 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
-  lv_base_fcp   = lv_base_fcp + <fs_taxtyp>-base.
-  lv_taxval_fcp = lv_taxval_fcp + <fs_taxtyp>-taxval.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Início
+*  lv_texto      = |{ TEXT-f30 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
+*  lv_base_fcp   = lv_base_fcp + <fs_taxtyp>-base.
+*  lv_taxval_fcp = lv_taxval_fcp + <fs_taxtyp>-taxval.
+  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY itmnum = <fs_nflin>-itmnum
+                                                              taxtyp = lc_fcp3 BINARY SEARCH.
+  IF sy-subrc EQ 0.
+    lv_texto        = |{ TEXT-f30 } { <fs_fcp_values>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_fcp_values>-taxval }|.
+    lv_base_fcp   = lv_base_fcp + <fs_fcp_values>-base.
+    lv_taxval_fcp = lv_taxval_fcp + <fs_fcp_values>-taxval.
+  ENDIF.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Fim
 
   IF lv_texto IS NOT INITIAL.
 
@@ -147,9 +190,18 @@ IF sy-subrc = 0.
   CONDENSE lv_aliq.
   SPLIT lv_aliq AT'.' INTO lv_aliq lv_zeros.
 
-  lv_texto        = |{ TEXT-f33 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
-  lv_base_fcpst   = lv_base_fcpst + <fs_taxtyp>-base.
-  lv_taxval_fcpst = lv_taxval_fcpst + <fs_taxtyp>-taxval.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Início
+*  lv_texto        = |{ TEXT-f33 } { <fs_taxtyp>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_taxtyp>-taxval }|.
+*  lv_base_fcpst   = lv_base_fcpst + <fs_taxtyp>-base.
+*  lv_taxval_fcpst = lv_taxval_fcpst + <fs_taxtyp>-taxval.
+  READ TABLE lt_fcp_values ASSIGNING <fs_fcp_values> WITH KEY itmnum = <fs_nflin>-itmnum
+                                                              taxtyp = lc_fpso BINARY SEARCH.
+  IF sy-subrc EQ 0.
+    lv_texto        = |{ TEXT-f33 } { <fs_fcp_values>-base } { TEXT-f31 } { lv_aliq }% { TEXT-f32 } { <fs_fcp_values>-taxval }|.
+    lv_base_fcpst   = lv_base_fcp + <fs_fcp_values>-base.
+    lv_taxval_fcpst = lv_taxval_fcp + <fs_fcp_values>-taxval.
+  ENDIF.
+* LSCHEPP - SD - 8000007840 - Quebra de lote - Total FCP e reembolso - 24.05.2023 Fim
 
   IF lv_texto IS NOT INITIAL.
 
