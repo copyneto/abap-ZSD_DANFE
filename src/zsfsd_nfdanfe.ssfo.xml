@@ -731,17 +731,17 @@
    <item>
     <NAME>GV_DVENC1</NAME>
     <TYPING>TYPE</TYPING>
-    <TYPENAME>BSEG-FDTAG</TYPENAME>
+    <TYPENAME>CHAR10</TYPENAME>
    </item>
    <item>
     <NAME>GV_DVENC2</NAME>
     <TYPING>TYPE</TYPING>
-    <TYPENAME>BSEG-FDTAG</TYPENAME>
+    <TYPENAME>CHAR10</TYPENAME>
    </item>
    <item>
     <NAME>GV_DVENC3</NAME>
     <TYPING>TYPE</TYPING>
-    <TYPENAME>BSEG-FDTAG</TYPENAME>
+    <TYPENAME>CHAR10</TYPENAME>
    </item>
    <item>
     <NAME>GT_VALOR_EXT</NAME>
@@ -15060,144 +15060,169 @@
                             <item>      lv_valor     TYPE char100.</item>
                             <item/>
                             <item>lv_lastpages = nota_fiscal-observ8.</item>
-                            <item>*IF sfsy-page NE lv_lastpages.</item>
-                            <item>*ELSE.</item>
                             <item/>
-                            <item>CLEAR: gv_nftot_desc1,</item>
-                            <item>       gv_valor_ext,</item>
-                            <item>       gv_valor_ext2.</item>
+                            <item>IF sfsy-page NE lv_lastpages.</item>
                             <item/>
-                            <item>REFRESH gt_valor_ext.</item>
+                            <item>  gv_numero1 = &apos;********&apos;.</item>
+                            <item>  gv_numero2 = &apos;********&apos;.</item>
+                            <item>  gv_numero3 = &apos;********&apos;.</item>
+                            <item>  gv_valor1 = &apos;********&apos;.</item>
+                            <item>  gv_valor2 = &apos;********&apos;.</item>
+                            <item>  gv_valor3 = &apos;********&apos;.</item>
+                            <item>  gv_dvenc1 = &apos;********&apos;.</item>
+                            <item>  gv_dvenc2 = &apos;********&apos;.</item>
+                            <item>  gv_dvenc3 = &apos;********&apos;.</item>
                             <item/>
-                            <item>WRITE nota_fiscal-nota_fiscal-nftot TO lv_valor CURRENCY &apos;BRL&apos;.</item>
+                            <item>ELSE.</item>
                             <item/>
-                            <item>CALL FUNCTION &apos;ZFMSD_VALOR_EXTENSO&apos;</item>
-                            <item>  EXPORTING</item>
-                            <item>    iv_valor = lv_valor</item>
-                            <item>  IMPORTING</item>
-                            <item>    ev_valor = gv_nftot_desc1.</item>
+                            <item>  CLEAR: gv_numero1,</item>
+                            <item>         gv_numero2,</item>
+                            <item>         gv_numero3,</item>
+                            <item>         gv_valor1,</item>
+                            <item>         gv_valor2,</item>
+                            <item>         gv_valor3,</item>
+                            <item>         gv_dvenc1,</item>
+                            <item>         gv_dvenc2,</item>
+                            <item>         gv_dvenc3.</item>
                             <item/>
-                            <item>CALL FUNCTION &apos;SOTR_SERV_STRING_TO_TABLE&apos;</item>
-                            <item>  EXPORTING</item>
-                            <item>    text        = gv_nftot_desc1</item>
-                            <item>    line_length = 100</item>
-                            <item>  TABLES</item>
-                            <item>    text_tab    = gt_valor_ext.</item>
+                            <item>  CLEAR: gv_nftot_desc1,</item>
+                            <item>         gv_valor_ext,</item>
+                            <item>         gv_valor_ext2.</item>
                             <item/>
-                            <item>LOOP AT gt_valor_ext ASSIGNING FIELD-SYMBOL(&lt;fs_valor&gt;).</item>
-                            <item>  CASE sy-tabix.</item>
-                            <item>    WHEN 1.</item>
-                            <item>      gv_valor_ext = &lt;fs_valor&gt;.</item>
-                            <item>    WHEN 2.</item>
-                            <item>      gv_valor_ext2 = &lt;fs_valor&gt;.</item>
-                            <item>      CONDENSE gv_valor_ext2.</item>
-                            <item>  ENDCASE.</item>
-                            <item>ENDLOOP.</item>
-                            <item>DATA(lt_item) = nota_fiscal-item[].</item>
-                            <item>SORT lt_item BY reftyp.</item>
-                            <item>READ TABLE lt_item ASSIGNING FIELD-SYMBOL(&lt;fs_item&gt;) WITH KEY reftyp = &apos;BI&apos; BINARY SEARCH.</item>
-                            <item>IF sy-subrc = 0.</item>
+                            <item>  REFRESH gt_valor_ext.</item>
                             <item/>
-                            <item>&quot;Verifica se não tem forma de pagamento na nota</item>
-                            <item>  SELECT COUNT( * )</item>
-                            <item>    FROM j_1bnfepayment</item>
-                            <item>    WHERE docnum EQ nota_fiscal-nota_fiscal-docnum</item>
-                            <item>      AND t_pag  EQ &apos;90&apos;. &quot;Sem pagamento</item>
-                            <item>  IF sy-subrc EQ 0.</item>
-                            <item>    RETURN.</item>
-                            <item>  ENDIF.</item>
+                            <item>  WRITE nota_fiscal-nota_fiscal-nftot TO lv_valor CURRENCY &apos;BRL&apos;.</item>
                             <item/>
-                            <item>  SELECT bukrs, gjahr, vbeln, buzei, dmbtr, belnr</item>
-                            <item>    FROM bsid_view</item>
-                            <item>    INTO TABLE @DATA(lt_fin)</item>
-                            <item>    WHERE bukrs EQ @nota_fiscal-nota_fiscal-bukrs</item>
-                            <item>      AND kunnr EQ @nota_fiscal-nota_fiscal-parid</item>
-                            <item>      AND gjahr EQ @sy-datum(4)</item>
-                            <item>      AND vbeln EQ @&lt;fs_item&gt;-refkey.</item>
-                            <item>  IF sy-subrc NE 0.</item>
+                            <item>  CALL FUNCTION &apos;ZFMSD_VALOR_EXTENSO&apos;</item>
+                            <item>    EXPORTING</item>
+                            <item>      iv_valor = lv_valor</item>
+                            <item>    IMPORTING</item>
+                            <item>      ev_valor = gv_nftot_desc1.</item>
+                            <item/>
+                            <item>  CALL FUNCTION &apos;SOTR_SERV_STRING_TO_TABLE&apos;</item>
+                            <item>    EXPORTING</item>
+                            <item>      text        = gv_nftot_desc1</item>
+                            <item>      line_length = 100</item>
+                            <item>    TABLES</item>
+                            <item>      text_tab    = gt_valor_ext.</item>
+                            <item/>
+                            <item>  LOOP AT gt_valor_ext ASSIGNING FIELD-SYMBOL(&lt;fs_valor&gt;).</item>
+                            <item>    CASE sy-tabix.</item>
+                            <item>      WHEN 1.</item>
+                            <item>        gv_valor_ext = &lt;fs_valor&gt;.</item>
+                            <item>      WHEN 2.</item>
+                            <item>        gv_valor_ext2 = &lt;fs_valor&gt;.</item>
+                            <item>        CONDENSE gv_valor_ext2.</item>
+                            <item>    ENDCASE.</item>
+                            <item>  ENDLOOP.</item>
+                            <item>  DATA(lt_item) = nota_fiscal-item[].</item>
+                            <item>  SORT lt_item BY reftyp.</item>
+                            <item>  READ TABLE lt_item ASSIGNING FIELD-SYMBOL(&lt;fs_item&gt;) WITH KEY reftyp = &apos;BI&apos; BINARY SEARCH.</item>
+                            <item>  IF sy-subrc = 0.</item>
+                            <item/>
+                            <item>    &quot;Verifica se não tem forma de pagamento na nota</item>
+                            <item>    SELECT COUNT( * )</item>
+                            <item>      FROM j_1bnfepayment</item>
+                            <item>      WHERE docnum EQ nota_fiscal-nota_fiscal-docnum</item>
+                            <item>        AND t_pag  EQ &apos;90&apos;. &quot;Sem pagamento</item>
+                            <item>    IF sy-subrc EQ 0.</item>
+                            <item>      RETURN.</item>
+                            <item>    ENDIF.</item>
+                            <item/>
                             <item>    SELECT bukrs, gjahr, vbeln, buzei, dmbtr, belnr</item>
-                            <item>      FROM bsad_view</item>
-                            <item>      INTO TABLE @lt_fin</item>
+                            <item>      FROM bsid_view</item>
+                            <item>      INTO TABLE @DATA(lt_fin)</item>
                             <item>      WHERE bukrs EQ @nota_fiscal-nota_fiscal-bukrs</item>
                             <item>        AND kunnr EQ @nota_fiscal-nota_fiscal-parid</item>
+                            <item>        AND gjahr EQ @sy-datum(4)</item>
                             <item>        AND vbeln EQ @&lt;fs_item&gt;-refkey.</item>
-                            <item>  ENDIF.</item>
+                            <item>    IF sy-subrc NE 0.</item>
+                            <item>      SELECT bukrs, gjahr, vbeln, buzei, dmbtr, belnr</item>
+                            <item>        FROM bsad_view</item>
+                            <item>        INTO TABLE @lt_fin</item>
+                            <item>        WHERE bukrs EQ @nota_fiscal-nota_fiscal-bukrs</item>
+                            <item>          AND kunnr EQ @nota_fiscal-nota_fiscal-parid</item>
+                            <item>          AND vbeln EQ @&lt;fs_item&gt;-refkey.</item>
+                            <item>    ENDIF.</item>
                             <item/>
-                            <item>  SORT lt_fin BY vbeln buzei.</item>
+                            <item>    SORT lt_fin BY vbeln buzei.</item>
                             <item/>
-                            <item>  IF lt_fin IS NOT INITIAL.</item>
+                            <item>    IF lt_fin IS NOT INITIAL.</item>
                             <item/>
-                            <item>    SELECT belnr, buzei, fdtag</item>
-                            <item>      FROM bseg</item>
-                            <item>      INTO TABLE @DATA(lt_bseg)</item>
-                            <item>      FOR ALL ENTRIES IN @lt_fin</item>
-                            <item>      WHERE bukrs EQ @lt_fin-bukrs</item>
-                            <item>        AND gjahr EQ @lt_fin-gjahr</item>
-                            <item>        AND belnr EQ @lt_fin-vbeln</item>
-                            <item>        AND buzei EQ @lt_fin-buzei.</item>
+                            <item>      SELECT belnr, buzei, fdtag</item>
+                            <item>        FROM bseg</item>
+                            <item>        INTO TABLE @DATA(lt_bseg)</item>
+                            <item>        FOR ALL ENTRIES IN @lt_fin</item>
+                            <item>        WHERE bukrs EQ @lt_fin-bukrs</item>
+                            <item>          AND gjahr EQ @lt_fin-gjahr</item>
+                            <item>          AND belnr EQ @lt_fin-vbeln</item>
+                            <item>          AND buzei EQ @lt_fin-buzei.</item>
                             <item/>
-                            <item>    SORT lt_bseg BY belnr buzei.</item>
+                            <item>      SORT lt_bseg BY belnr buzei.</item>
                             <item/>
-                            <item>    LOOP AT lt_fin ASSIGNING FIELD-SYMBOL(&lt;fs_bsid&gt;).</item>
+                            <item>      LOOP AT lt_fin ASSIGNING FIELD-SYMBOL(&lt;fs_bsid&gt;).</item>
                             <item/>
-                            <item>      CASE &lt;fs_bsid&gt;-buzei.</item>
-                            <item>        WHEN &apos;001&apos;.</item>
-                            <item>          gv_numero1   = |{ nota_fiscal-nota_fiscal-nfenum }/{ &lt;fs_bsid&gt;-buzei }|.</item>
-                            <item>          IF &lt;fs_bsid&gt;-dmbtr GT nota_fiscal-nota_fiscal-nftot.</item>
+                            <item>        CASE &lt;fs_bsid&gt;-buzei.</item>
+                            <item>          WHEN &apos;001&apos;.</item>
+                            <item>            gv_numero1   = |{ nota_fiscal-nota_fiscal-nfenum }/{ &lt;fs_bsid&gt;-buzei }|.</item>
+                            <item>            IF &lt;fs_bsid&gt;-dmbtr GT nota_fiscal-nota_fiscal-nftot.</item>
                             <item/>
-                            <item>            lv_dif_parc_nftot = &lt;fs_bsid&gt;-dmbtr - nota_fiscal-nota_fiscal-nftot.</item>
+                            <item>              lv_dif_parc_nftot = &lt;fs_bsid&gt;-dmbtr - nota_fiscal-nota_fiscal-nftot.</item>
                             <item/>
-                            <item>            IF lv_dif_parc_nftot LE &apos;0.05&apos;.</item>
-                            <item>              lv_valor_fat = &lt;fs_bsid&gt;-dmbtr - lv_dif_parc_nftot.</item>
-                            <item>            ENDIF.</item>
+                            <item>              IF lv_dif_parc_nftot LE &apos;0.05&apos;.</item>
+                            <item>                lv_valor_fat = &lt;fs_bsid&gt;-dmbtr - lv_dif_parc_nftot.</item>
+                            <item>              ENDIF.</item>
                             <item/>
-                            <item>          ELSEIF &lt;fs_bsid&gt;-dmbtr LT nota_fiscal-nota_fiscal-nftot.</item>
+                            <item>            ELSEIF &lt;fs_bsid&gt;-dmbtr LT nota_fiscal-nota_fiscal-nftot.</item>
                             <item/>
-                            <item>            lv_dif_parc_nftot = nota_fiscal-nota_fiscal-nftot - &lt;fs_bsid&gt;-dmbtr.</item>
+                            <item>              lv_dif_parc_nftot = nota_fiscal-nota_fiscal-nftot - &lt;fs_bsid&gt;-dmbtr.</item>
                             <item/>
-                            <item>            IF lv_dif_parc_nftot LE &apos;0.05&apos;.</item>
-                            <item>              lv_valor_fat = &lt;fs_bsid&gt;-dmbtr + lv_dif_parc_nftot.</item>
-                            <item>            ENDIF.</item>
-                            <item>            IF lv_valor_fat IS INITIAL.</item>
+                            <item>              IF lv_dif_parc_nftot LE &apos;0.05&apos;.</item>
+                            <item>                lv_valor_fat = &lt;fs_bsid&gt;-dmbtr + lv_dif_parc_nftot.</item>
+                            <item>              ENDIF.</item>
+                            <item>              IF lv_valor_fat IS INITIAL.</item>
+                            <item>                lv_valor_fat = &lt;fs_bsid&gt;-dmbtr.</item>
+                            <item>              ENDIF.</item>
+                            <item>            ELSE.</item>
                             <item>              lv_valor_fat = &lt;fs_bsid&gt;-dmbtr.</item>
                             <item>            ENDIF.</item>
-                            <item>          ELSE.</item>
-                            <item>            lv_valor_fat = &lt;fs_bsid&gt;-dmbtr.</item>
-                            <item>          ENDIF.</item>
-                            <item>          WRITE lv_valor_fat TO gv_valor1 CURRENCY &apos;BRL&apos;.</item>
-                            <item>          CONDENSE gv_valor1 NO-GAPS.</item>
+                            <item>            WRITE lv_valor_fat TO gv_valor1 CURRENCY &apos;BRL&apos;.</item>
+                            <item>            CONDENSE gv_valor1 NO-GAPS.</item>
                             <item>*          REPLACE ALL OCCURRENCES OF &apos;.&apos; IN gv_valor1 WITH &apos;,&apos; .</item>
-                            <item>        WHEN &apos;002&apos;.</item>
-                            <item>          CLEAR lv_valor_fat.</item>
-                            <item>          gv_numero2   = |{ nota_fiscal-nota_fiscal-nfenum }/{ &lt;fs_bsid&gt;-buzei }|.</item>
-                            <item>          lv_valor_fat    = &lt;fs_bsid&gt;-dmbtr.</item>
-                            <item>          WRITE lv_valor_fat TO gv_valor2 CURRENCY &apos;BRL&apos;.</item>
-                            <item>          CONDENSE gv_valor2 NO-GAPS.</item>
-                            <item>*          REPLACE ALL OCCURRENCES OF &apos;.&apos; IN gv_valor2 WITH &apos;,&apos; .</item>
-                            <item>        WHEN &apos;003&apos;.</item>
-                            <item>          CLEAR lv_valor_fat.</item>
-                            <item>          gv_numero3   = |{ nota_fiscal-nota_fiscal-nfenum }/{ &lt;fs_bsid&gt;-buzei }|.</item>
-                            <item>          lv_valor_fat    = &lt;fs_bsid&gt;-dmbtr.</item>
-                            <item>          WRITE lv_valor_fat TO gv_valor3 CURRENCY &apos;BRL&apos;.</item>
-                            <item>          CONDENSE gv_valor3 NO-GAPS.</item>
-                            <item>*          REPLACE ALL OCCURRENCES OF &apos;.&apos; IN gv_valor3 WITH &apos;,&apos; .</item>
-                            <item>      ENDCASE.</item>
-                            <item/>
-                            <item>      READ TABLE lt_bseg ASSIGNING FIELD-SYMBOL(&lt;fs_bseg&gt;) WITH KEY belnr = &lt;fs_bsid&gt;-vbeln</item>
-                            <item>                                                                    buzei = &lt;fs_bsid&gt;-buzei BINARY SEARCH.</item>
-                            <item>      IF sy-subrc = 0.</item>
-                            <item>        CASE &lt;fs_bseg&gt;-buzei.</item>
-                            <item>          WHEN &apos;001&apos;.</item>
-                            <item>            gv_dvenc1   = &lt;fs_bseg&gt;-fdtag.</item>
                             <item>          WHEN &apos;002&apos;.</item>
-                            <item>            gv_dvenc2   = &lt;fs_bseg&gt;-fdtag.</item>
+                            <item>            CLEAR lv_valor_fat.</item>
+                            <item>            gv_numero2   = |{ nota_fiscal-nota_fiscal-nfenum }/{ &lt;fs_bsid&gt;-buzei }|.</item>
+                            <item>            lv_valor_fat    = &lt;fs_bsid&gt;-dmbtr.</item>
+                            <item>            WRITE lv_valor_fat TO gv_valor2 CURRENCY &apos;BRL&apos;.</item>
+                            <item>            CONDENSE gv_valor2 NO-GAPS.</item>
+                            <item>*          REPLACE ALL OCCURRENCES OF &apos;.&apos; IN gv_valor2 WITH &apos;,&apos; .</item>
                             <item>          WHEN &apos;003&apos;.</item>
-                            <item>            gv_dvenc3   = &lt;fs_bseg&gt;-fdtag.</item>
+                            <item>            CLEAR lv_valor_fat.</item>
+                            <item>            gv_numero3   = |{ nota_fiscal-nota_fiscal-nfenum }/{ &lt;fs_bsid&gt;-buzei }|.</item>
+                            <item>            lv_valor_fat    = &lt;fs_bsid&gt;-dmbtr.</item>
+                            <item>            WRITE lv_valor_fat TO gv_valor3 CURRENCY &apos;BRL&apos;.</item>
+                            <item>            CONDENSE gv_valor3 NO-GAPS.</item>
+                            <item>*          REPLACE ALL OCCURRENCES OF &apos;.&apos; IN gv_valor3 WITH &apos;,&apos; .</item>
                             <item>        ENDCASE.</item>
-                            <item>      ENDIF.</item>
                             <item/>
-                            <item>    ENDLOOP.</item>
+                            <item>        READ TABLE lt_bseg ASSIGNING FIELD-SYMBOL(&lt;fs_bseg&gt;) WITH KEY belnr = &lt;fs_bsid&gt;-vbeln</item>
+                            <item>                                                                      buzei = &lt;fs_bsid&gt;-buzei BINARY SEARCH.</item>
+                            <item>        IF sy-subrc = 0.</item>
+                            <item>          DATA(lv_fdtag) = CONV char10( |{ &lt;fs_bseg&gt;-fdtag+6(2) }.{ &lt;fs_bseg&gt;-fdtag+4(2) }.{ &lt;fs_bseg&gt;-fdtag(4) } | ).</item>
+                            <item>          CASE &lt;fs_bseg&gt;-buzei.</item>
+                            <item>            WHEN &apos;001&apos;.</item>
+                            <item>              gv_dvenc1 = lv_fdtag.</item>
+                            <item>            WHEN &apos;002&apos;.</item>
+                            <item>              gv_dvenc2 = lv_fdtag.</item>
+                            <item>            WHEN &apos;003&apos;.</item>
+                            <item>              gv_dvenc3 = lv_fdtag.</item>
+                            <item>          ENDCASE.</item>
+                            <item>          CLEAR lv_fdtag.</item>
+                            <item>        ENDIF.</item>
                             <item/>
+                            <item>      ENDLOOP.</item>
+                            <item/>
+                            <item>    ENDIF.</item>
                             <item>  ENDIF.</item>
                             <item>ENDIF.</item>
                            </CODE>
@@ -16354,7 +16379,7 @@
                              <TDLINE>&lt;CC&gt;&amp;NOTA_FISCAL-INV_NUM4&amp;&lt;/&gt;</TDLINE>
                             </item>
                            </TEXT>
-                           <STYLE_NAME>Z_NFSTDANFE_SAP_NEW</STYLE_NAME>
+                           <STYLE_NAME>ZSFSD_NFDANFE</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
                             <NCOLS>0</NCOLS>
@@ -31261,6 +31286,12 @@
                                      <item>  CONDENSE vl_baseicms.</item>
                                      <item>  WRITE &lt;fs_item_tax&gt;-taxval TO vl_icmsval CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
                                      <item>  CONDENSE vl_icmsval.</item>
+                                     <item>* LSCHEPP - SD - 8000007839 - Destaque indevido de ICMS e ICMS ST - 30.05.2023 Início</item>
+                                     <item>  IF &lt;fs_item_tax&gt;-stattx EQ abap_true AND</item>
+                                     <item>     nota_fiscal-nota_fiscal-nftype EQ &apos;YV&apos;.</item>
+                                     <item>    vl_icmsval = &apos;0,00&apos;.</item>
+                                     <item>  ENDIF.</item>
+                                     <item>* LSCHEPP - SD - 8000007839 - Destaque indevido de ICMS e ICMS ST - 30.05.2023 Fim</item>
                                      <item>*IF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
                                      <item>ELSEIF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
                                      <item>* LSCHEPP - SD - 8000007675 - Junç itens Mens diferid e bc icms incorr - 23.05.2023 Fim</item>
@@ -32126,19 +32157,38 @@
                                     <CODE>
                                      <item>IF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
                                      <item/>
-                                     <item>  SELECT SINGLE taxval</item>
+                                     <item>* LSCHEPP - SD - 8000007839 - Destaque indevido de ICMS e ICMS ST - 30.05.2023 Início</item>
+                                     <item>*  SELECT SINGLE taxval</item>
+                                     <item>*    FROM j_1bnfstx</item>
+                                     <item>*    INTO @DATA(lv_taxval)</item>
+                                     <item>*    WHERE docnum EQ @item-docnum</item>
+                                     <item>*      AND itmnum EQ @item-itmnum</item>
+                                     <item>*      AND taxtyp EQ &apos;ICS3&apos;.</item>
+                                     <item>*</item>
+                                     <item>*  IF lv_taxval IS NOT INITIAL.</item>
+                                     <item>*    WRITE lv_taxval TO vl_valicms_st CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
+                                     <item>*    CONDENSE vl_valicms_st.</item>
+                                     <item>*  ELSE.</item>
+                                     <item>*    vl_valicms_st = &apos;0,00&apos;.</item>
+                                     <item>*  ENDIF.</item>
+                                     <item>  SELECT SINGLE taxval, stattx</item>
                                      <item>    FROM j_1bnfstx</item>
-                                     <item>    INTO @DATA(lv_taxval)</item>
+                                     <item>    INTO @DATA(ls_nfstx)</item>
                                      <item>    WHERE docnum EQ @item-docnum</item>
                                      <item>      AND itmnum EQ @item-itmnum</item>
                                      <item>      AND taxtyp EQ &apos;ICS3&apos;.</item>
                                      <item/>
-                                     <item>  IF lv_taxval IS NOT INITIAL.</item>
-                                     <item>    WRITE lv_taxval TO vl_valicms_st CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
+                                     <item>  IF ls_nfstx-taxval IS NOT INITIAL.</item>
+                                     <item>    WRITE ls_nfstx-taxval TO vl_valicms_st CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
                                      <item>    CONDENSE vl_valicms_st.</item>
+                                     <item>    IF ls_nfstx-stattx EQ abap_true AND</item>
+                                     <item>       nota_fiscal-nota_fiscal-nftype EQ &apos;YV&apos;.</item>
+                                     <item>      vl_valicms_st = &apos;0,00&apos;.</item>
+                                     <item>    ENDIF.</item>
                                      <item>  ELSE.</item>
                                      <item>    vl_valicms_st = &apos;0,00&apos;.</item>
                                      <item>  ENDIF.</item>
+                                     <item>* LSCHEPP - SD - 8000007839 - Destaque indevido de ICMS e ICMS ST - 30.05.2023 Fim</item>
                                      <item/>
                                      <item>ELSE.</item>
                                      <item/>
@@ -32170,8 +32220,6 @@
                                      <item>    ENDIF.</item>
                                      <item>  ENDIF.</item>
                                      <item>ENDIF.</item>
-                                     <item/>
-                                     <item/>
                                      <item/>
                                      <item/>
                                     </CODE>
@@ -32386,23 +32434,28 @@
                                      </item>
                                     </PLIST>
                                     <CODE>
-                                     <item>DATA: LV_IPI TYPE P DECIMALS 2.</item>
+                                     <item>DATA: lv_ipi TYPE p DECIMALS 2.</item>
+                                     <item/>
+                                     <item>* LSCHEPP - SD - 8000008015 - Retirar do DANFE Vlr IPI e Alíquota NF d - 29.05.2023 Início</item>
+                                     <item>IF nota_fiscal-nota_fiscal-nftype EQ &apos;IE&apos;.</item>
+                                     <item>  CLEAR item-ipival.</item>
+                                     <item>ENDIF.</item>
+                                     <item>* LSCHEPP - SD - 8000008015 - Retirar do DANFE Vlr IPI e Alíquota NF d - 29.05.2023 Fim</item>
                                      <item/>
                                      <item>* Início Alteração - Projeto Alicerce &quot;Issue&quot; - 44 Assis Medeiros 22.03.2019</item>
                                      <item>* Não considerar valores estatísticos</item>
-                                     <item>IF ITEM-IPISTAT = &apos; &apos;.</item>
-                                     <item>LV_IPI = ITEM-IPIVAL.</item>
+                                     <item>IF item-ipistat = &apos; &apos;.</item>
+                                     <item>  lv_ipi = item-ipival.</item>
                                      <item>ENDIF.</item>
                                      <item>* Fim Alteração - Projeto Alicerce &quot;Issue&quot; - 44 Assis Medeiros 22.03.2019</item>
                                      <item>* Não considerar valores estatísticos</item>
                                      <item/>
-                                     <item>WRITE LV_IPI TO VL_IPI CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
-                                     <item>CONDENSE VL_IPI.</item>
+                                     <item>WRITE lv_ipi TO vl_ipi CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
+                                     <item>CONDENSE vl_ipi.</item>
                                      <item/>
                                      <item>***IF nota_fiscal-nota_fiscal-NFTYPE = &apos;IE&apos;.</item>
                                      <item>***  CLEAR VL_IPI.</item>
                                      <item>***ENDIF.</item>
-                                     <item/>
                                      <item/>
                                      <item/>
                                      <item/>
@@ -32870,24 +32923,30 @@
                                      </item>
                                     </PLIST>
                                     <CODE>
-                                     <item>DATA: LV_IPI TYPE P DECIMALS 2.</item>
+                                     <item>DATA: lv_ipi TYPE p DECIMALS 2.</item>
+                                     <item/>
+                                     <item>* LSCHEPP - SD - 8000008015 - Retirar do DANFE Vlr IPI e Alíquota NF d - 29.05.2023 Início</item>
+                                     <item>IF nota_fiscal-nota_fiscal-nftype EQ &apos;IE&apos;.</item>
+                                     <item>  CLEAR item-ipirate.</item>
+                                     <item>ENDIF.</item>
+                                     <item>* LSCHEPP - SD - 8000008015 - Retirar do DANFE Vlr IPI e Alíquota NF d - 29.05.</item>
+                                     <item/>
                                      <item>* Início Alteração - Projeto Alicerce &quot;Issue&quot; - 44 Assis Medeiros 22.03.2019</item>
                                      <item>* Não considerar valores estatísticos</item>
-                                     <item>IF ITEM-IPISTAT = &apos; &apos;.</item>
-                                     <item>LV_IPI = ITEM-IPIRATE.</item>
+                                     <item>IF item-ipistat = &apos; &apos;.</item>
+                                     <item>  lv_ipi = item-ipirate.</item>
                                      <item>ENDIF.</item>
                                      <item>* Fim Alteração - Projeto Alicerce &quot;Issue&quot; - 44 Assis Medeiros 22.03.2019</item>
                                      <item>* Não considerar valores estatísticos</item>
                                      <item/>
                                      <item/>
                                      <item/>
-                                     <item>WRITE LV_IPI TO VL_IPI_RATE CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
-                                     <item>CONDENSE VL_IPI_RATE.</item>
+                                     <item>WRITE lv_ipi TO vl_ipi_rate CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
+                                     <item>CONDENSE vl_ipi_rate.</item>
                                      <item/>
                                      <item>***IF nota_fiscal-nota_fiscal-NFTYPE = &apos;IE&apos;.</item>
                                      <item>***  CLEAR VL_IPI_RATE.</item>
                                      <item>***ENDIF.</item>
-                                     <item/>
                                      <item/>
                                      <item/>
                                      <item/>

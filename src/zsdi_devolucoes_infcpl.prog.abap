@@ -193,35 +193,43 @@ IF is_header-doctyp = '6'
 
     cs_header-infcpl = |{ cs_header-infcpl }  { lv_text }|.
 
-    APPEND INITIAL LINE TO ct_add_info ASSIGNING FIELD-SYMBOL(<fs_add_info_aux>).
+* LSCHEPP - SD - 8000007933 - Ajustar o valor do IPI nos DANFES de dev - 29.05.2023 Início
+    IF is_header-nftype NE 'IE'.
+* LSCHEPP - SD - 8000007933 - Ajustar o valor do IPI nos DANFES de dev - 29.05.2023 Fim
 
-    <fs_add_info_aux>-docnum = is_header-docnum.
-    <fs_add_info_aux>-inf_usage = '1'.
-    <fs_add_info_aux>-xcampo = 'INFCOMP'.
-    LOOP AT lt_line ASSIGNING FIELD-SYMBOL(<fs_tline>).
-      CASE sy-tabix.
-        WHEN 1.
-          <fs_add_info_aux>-xtexto = <fs_tline>.
-        WHEN 2.
-          <fs_add_info_aux>-xtexto2 = <fs_tline>.
-        WHEN 3.
-          <fs_add_info_aux>-xtexto3 = <fs_tline>.
-        WHEN 4.
-          <fs_add_info_aux>-xtexto4 = <fs_tline>.
-        WHEN 5.
-          <fs_add_info_aux>-xtexto5 = <fs_tline>.
-        WHEN 6.
-          <fs_add_info_aux>-xtexto6 = <fs_tline>.
-        WHEN 7.
-          <fs_add_info_aux>-xtexto7 = <fs_tline>.
-        WHEN 8.
-          <fs_add_info_aux>-xtexto8 = <fs_tline>.
-        WHEN 9.
-          <fs_add_info_aux>-xtexto9 = <fs_tline>.
-        WHEN OTHERS.
-          <fs_add_info_aux>-xtexto10 = <fs_tline>.
-      ENDCASE.
-    ENDLOOP.
+      APPEND INITIAL LINE TO ct_add_info ASSIGNING FIELD-SYMBOL(<fs_add_info_aux>).
+
+      <fs_add_info_aux>-docnum = is_header-docnum.
+      <fs_add_info_aux>-inf_usage = '1'.
+      <fs_add_info_aux>-xcampo = 'INFCOMP'.
+      LOOP AT lt_line ASSIGNING FIELD-SYMBOL(<fs_tline>).
+        CASE sy-tabix.
+          WHEN 1.
+            <fs_add_info_aux>-xtexto = <fs_tline>.
+          WHEN 2.
+            <fs_add_info_aux>-xtexto2 = <fs_tline>.
+          WHEN 3.
+            <fs_add_info_aux>-xtexto3 = <fs_tline>.
+          WHEN 4.
+            <fs_add_info_aux>-xtexto4 = <fs_tline>.
+          WHEN 5.
+            <fs_add_info_aux>-xtexto5 = <fs_tline>.
+          WHEN 6.
+            <fs_add_info_aux>-xtexto6 = <fs_tline>.
+          WHEN 7.
+            <fs_add_info_aux>-xtexto7 = <fs_tline>.
+          WHEN 8.
+            <fs_add_info_aux>-xtexto8 = <fs_tline>.
+          WHEN 9.
+            <fs_add_info_aux>-xtexto9 = <fs_tline>.
+          WHEN OTHERS.
+            <fs_add_info_aux>-xtexto10 = <fs_tline>.
+        ENDCASE.
+      ENDLOOP.
+
+* LSCHEPP - SD - 8000007933 - Ajustar o valor do IPI nos DANFES de dev - 29.05.2023 Início
+    ENDIF.
+* LSCHEPP - SD - 8000007933 - Ajustar o valor do IPI nos DANFES de dev - 29.05.2023 Fim
 
   ENDIF.
 
