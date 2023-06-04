@@ -31888,56 +31888,62 @@
                                      </item>
                                     </PLIST>
                                     <CODE>
-                                     <item>  IF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
+                                     <item>* LSCHEPP - SD - 8000008066 - GAP188 Quebra de lote DANFE com item ST  - 01.06.2023 Início</item>
+                                     <item>SORT tab_item_tax BY docnum itmnum taxtyp.</item>
+                                     <item>READ TABLE tab_item_tax ASSIGNING FIELD-SYMBOL(&lt;fs_item_tax&gt;) WITH KEY docnum = item-docnum</item>
+                                     <item>                                                                       itmnum = item-itmnum</item>
+                                     <item>                                                                       taxtyp = &apos;ICS3&apos; BINARY SEARCH.</item>
+                                     <item>IF &lt;fs_item_tax&gt; IS ASSIGNED.</item>
+                                     <item>  WRITE &lt;fs_item_tax&gt;-base TO vl_baseicms_st CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
+                                     <item>  CONDENSE vl_baseicms_st.</item>
+                                     <item>*  IF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
+                                     <item>ELSEIF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
+                                     <item>* LSCHEPP - SD - 8000008066 - GAP188 Quebra de lote DANFE com item ST  - 01.06.2023 Fim</item>
                                      <item/>
-                                     <item>    SELECT SINGLE base</item>
-                                     <item>      FROM j_1bnfstx</item>
-                                     <item>      INTO @DATA(lv_base)</item>
-                                     <item>      WHERE docnum EQ @item-docnum</item>
-                                     <item>        AND itmnum EQ @item-itmnum</item>
-                                     <item>        AND taxtyp EQ &apos;ICS3&apos;.</item>
+                                     <item>  SELECT SINGLE base</item>
+                                     <item>    FROM j_1bnfstx</item>
+                                     <item>    INTO @DATA(lv_base)</item>
+                                     <item>    WHERE docnum EQ @item-docnum</item>
+                                     <item>      AND itmnum EQ @item-itmnum</item>
+                                     <item>      AND taxtyp EQ &apos;ICS3&apos;.</item>
                                      <item/>
-                                     <item>    IF lv_base IS NOT INITIAL.</item>
-                                     <item>      WRITE lv_base TO vl_baseicms_st  CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
-                                     <item>      CONDENSE vl_baseicms_st.</item>
-                                     <item>    ELSE.</item>
-                                     <item>      vl_baseicms_st = &apos;0,00&apos;.</item>
-                                     <item>    ENDIF.</item>
-                                     <item/>
+                                     <item>  IF lv_base IS NOT INITIAL.</item>
+                                     <item>    WRITE lv_base TO vl_baseicms_st  CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
+                                     <item>    CONDENSE vl_baseicms_st.</item>
                                      <item>  ELSE.</item>
+                                     <item>    vl_baseicms_st = &apos;0,00&apos;.</item>
+                                     <item>  ENDIF.</item>
                                      <item/>
-                                     <item>    SORT tab_item_tax BY docnum itmnum taxtyp.</item>
-                                     <item>    READ TABLE tab_item_tax ASSIGNING FIELD-SYMBOL(&lt;fs_item_tax&gt;) WITH KEY docnum = item-docnum</item>
-                                     <item>                                                                           itmnum = item-itmnum</item>
-                                     <item>                                                                           taxtyp = &apos;ICS0&apos; BINARY SEARCH.</item>
+                                     <item>ELSE.</item>
+                                     <item/>
+                                     <item>  SORT tab_item_tax BY docnum itmnum taxtyp.</item>
+                                     <item>  READ TABLE tab_item_tax ASSIGNING &lt;fs_item_tax&gt; WITH KEY docnum = item-docnum</item>
+                                     <item>                                                           itmnum = item-itmnum</item>
+                                     <item>                                                           taxtyp = &apos;ICS0&apos; BINARY SEARCH.</item>
+                                     <item>  IF &lt;fs_item_tax&gt; IS ASSIGNED.</item>
+                                     <item>    WRITE &lt;fs_item_tax&gt;-base TO vl_baseicms_st  CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
+                                     <item>    CONDENSE vl_baseicms_st.</item>
+                                     <item>  ELSE.</item>
+                                     <item>    READ TABLE tab_item_tax ASSIGNING &lt;fs_item_tax&gt; WITH KEY docnum = item-docnum</item>
+                                     <item>                                                             itmnum = item-itmnum</item>
+                                     <item>                                                             taxtyp = &apos;ICS1&apos; BINARY SEARCH.</item>
                                      <item>    IF &lt;fs_item_tax&gt; IS ASSIGNED.</item>
-                                     <item>      WRITE &lt;fs_item_tax&gt;-base TO vl_baseicms_st  CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
+                                     <item>      WRITE &lt;fs_item_tax&gt;-base TO vl_baseicms_st CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
                                      <item>      CONDENSE vl_baseicms_st.</item>
                                      <item>    ELSE.</item>
                                      <item>      READ TABLE tab_item_tax ASSIGNING &lt;fs_item_tax&gt; WITH KEY docnum = item-docnum</item>
-                                     <item>                                                               itmnum = item-itmnum</item>
-                                     <item>                                                               taxtyp = &apos;ICS1&apos; BINARY SEARCH.</item>
+                                     <item>                                                         itmnum = item-itmnum</item>
+                                     <item>                                                         taxtyp = &apos;ICS2&apos; BINARY SEARCH.</item>
                                      <item>      IF &lt;fs_item_tax&gt; IS ASSIGNED.</item>
                                      <item>        WRITE &lt;fs_item_tax&gt;-base TO vl_baseicms_st CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
                                      <item>        CONDENSE vl_baseicms_st.</item>
                                      <item>      ELSE.</item>
-                                     <item>        READ TABLE tab_item_tax ASSIGNING &lt;fs_item_tax&gt; WITH KEY docnum = item-docnum</item>
-                                     <item>                                                           itmnum = item-itmnum</item>
-                                     <item>                                                           taxtyp = &apos;ICS2&apos; BINARY SEARCH.</item>
-                                     <item>        IF &lt;fs_item_tax&gt; IS ASSIGNED.</item>
-                                     <item>          WRITE &lt;fs_item_tax&gt;-base TO vl_baseicms_st CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
-                                     <item>          CONDENSE vl_baseicms_st.</item>
-                                     <item>        ELSE.</item>
-                                     <item>          vl_baseicms_st = &apos;0,00&apos;.</item>
-                                     <item>        ENDIF.</item>
-                                     <item/>
+                                     <item>        vl_baseicms_st = &apos;0,00&apos;.</item>
                                      <item>      ENDIF.</item>
+                                     <item/>
                                      <item>    ENDIF.</item>
                                      <item>  ENDIF.</item>
-                                     <item/>
-                                     <item/>
-                                     <item/>
-                                     <item/>
+                                     <item>ENDIF.</item>
                                     </CODE>
                                     <T_CAPTION>
                                      <item>
@@ -32155,8 +32161,21 @@
                                      </item>
                                     </PLIST>
                                     <CODE>
-                                     <item>IF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
-                                     <item/>
+                                     <item>* LSCHEPP - SD - 8000008066 - GAP188 Quebra de lote DANFE com item ST  - 01.06.2023 Início</item>
+                                     <item>SORT tab_item_tax BY docnum itmnum taxtyp.</item>
+                                     <item>READ TABLE tab_item_tax ASSIGNING FIELD-SYMBOL(&lt;fs_item_tax&gt;) WITH KEY docnum = item-docnum</item>
+                                     <item>                                                                       itmnum = item-itmnum</item>
+                                     <item>                                                                       taxtyp = &apos;ICS3&apos; BINARY SEARCH.</item>
+                                     <item>IF &lt;fs_item_tax&gt; IS ASSIGNED.</item>
+                                     <item>  WRITE &lt;fs_item_tax&gt;-taxval TO vl_valicms_st CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
+                                     <item>  CONDENSE vl_valicms_st.</item>
+                                     <item>  IF &lt;fs_item_tax&gt;-stattx EQ abap_true AND</item>
+                                     <item>     nota_fiscal-nota_fiscal-nftype EQ &apos;YV&apos;.</item>
+                                     <item>    vl_valicms_st = &apos;0,00&apos;.</item>
+                                     <item>  ENDIF.</item>
+                                     <item>*  IF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
+                                     <item>ELSEIF NOT nota_fiscal-nota_fiscal-nftype IN gr_nf_type_mm.</item>
+                                     <item>* LSCHEPP - SD - 8000008066 - GAP188 Quebra de lote DANFE com item ST  - 01.06.2023 Fim</item>
                                      <item>* LSCHEPP - SD - 8000007839 - Destaque indevido de ICMS e ICMS ST - 30.05.2023 Início</item>
                                      <item>*  SELECT SINGLE taxval</item>
                                      <item>*    FROM j_1bnfstx</item>
@@ -32193,9 +32212,9 @@
                                      <item>ELSE.</item>
                                      <item/>
                                      <item>  SORT tab_item_tax BY docnum itmnum taxtyp.</item>
-                                     <item>  READ TABLE tab_item_tax ASSIGNING FIELD-SYMBOL(&lt;fs_item_tax&gt;) WITH KEY docnum = item-docnum</item>
-                                     <item>                                                                         itmnum = item-itmnum</item>
-                                     <item>                                                                         taxtyp = &apos;ICS0&apos; BINARY SEARCH.</item>
+                                     <item>  READ TABLE tab_item_tax ASSIGNING &lt;fs_item_tax&gt; WITH KEY docnum = item-docnum</item>
+                                     <item>                                                           itmnum = item-itmnum</item>
+                                     <item>                                                           taxtyp = &apos;ICS0&apos; BINARY SEARCH.</item>
                                      <item>  IF &lt;fs_item_tax&gt; IS ASSIGNED.</item>
                                      <item>    WRITE &lt;fs_item_tax&gt;-taxval TO vl_valicms_st CURRENCY nota_fiscal-nota_fiscal-waerk.</item>
                                      <item>    CONDENSE vl_valicms_st.</item>
@@ -32220,7 +32239,6 @@
                                      <item>    ENDIF.</item>
                                      <item>  ENDIF.</item>
                                      <item>ENDIF.</item>
-                                     <item/>
                                      <item/>
                                     </CODE>
                                     <T_CAPTION>
