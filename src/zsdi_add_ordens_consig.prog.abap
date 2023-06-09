@@ -109,8 +109,58 @@ IF <fs_nfetx_tab> IS ASSIGNED.
         ENDIF.
       ENDIF.
 
-      DATA(lv_nfenum) = CONV j_1bnfnum9( lv_xblnr ).
-      DATA(lv_docdat) =  lv_budat_mkpf.
+      SELECT SINGLE nfenum, docdat
+        FROM j_1bnfdoc
+      WHERE
+        docnum EQ @is_header-docref
+      INTO @DATA(ls_doc_ref).
+
+      IF sy-subrc IS INITIAL.
+        DATA(lv_nfenum) = ls_doc_ref-nfenum.
+        DATA(lv_docdat) = ls_doc_ref-docdat.
+      ELSE.
+
+        SELECT COUNT( * )
+          FROM vbak
+          WHERE vbeln EQ @<fs_vbrp1>-vbelv
+          AND bsark EQ 'CARG'.
+
+        IF sy-subrc IS INITIAL.
+
+          lv_name_read = |{ <fs_vbrp1>-vbelv }{ <fs_vbrp1>-posnv }|.
+
+          CALL FUNCTION 'READ_TEXT'
+            EXPORTING
+              id                      = lc_z010
+              language                = sy-langu
+              name                    = lv_name_read
+              object                  = lc_ob_vbbp
+            TABLES
+              lines                   = lt_lines_read
+            EXCEPTIONS
+              id                      = 1
+              language                = 2
+              name                    = 3
+              not_found               = 4
+              object                  = 5
+              reference_check         = 6
+              wrong_access_to_archive = 7
+              OTHERS                  = 8.
+
+          IF sy-subrc IS INITIAL.
+            LOOP AT lt_lines_read ASSIGNING FIELD-SYMBOL(<fs_lines_read>).
+              lv_nfenum = CONV j_1bnfnum9( <fs_lines_read>-tdline+26(8) ).
+              lv_docdate = |{ <fs_lines_read>-tdline+4(2) }/{ <fs_lines_read>-tdline+2(2) }|.
+              lv_docdat = lv_docdate.
+            ENDLOOP.
+          ENDIF.
+
+        ELSE.
+          lv_nfenum = CONV j_1bnfnum9( lv_xblnr ).
+          lv_docdat =  lv_budat_mkpf.
+        ENDIF.
+
+      ENDIF.
 
 * LSCHEPP - SD - 8000007294 - Danfe x XML Dev Despesa Sem mens referen - 15.05.2023 Início
       IF lv_docdat IS INITIAL OR
@@ -131,17 +181,20 @@ IF <fs_nfetx_tab> IS ASSIGNED.
       ENDIF.
 * LSCHEPP - SD - 8000007294 - Danfe x XML Dev Despesa Sem mens referen - 15.05.2023 Fim
 
-      CALL FUNCTION 'CONVERSION_EXIT_PDATE_OUTPUT'
-        EXPORTING
-          input        = lv_docdat
-        IMPORTING
-          output       = lv_docdate
-        EXCEPTIONS
-          invalid_date = 1
-          OTHERS       = 2.
-      IF sy-subrc <> 0.
-        MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
-          WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4 INTO DATA(lv_message).
+      IF lv_docdate IS INITIAL.
+
+        CALL FUNCTION 'CONVERSION_EXIT_PDATE_OUTPUT'
+          EXPORTING
+            input        = lv_docdat
+          IMPORTING
+            output       = lv_docdate
+          EXCEPTIONS
+            invalid_date = 1
+            OTHERS       = 2.
+        IF sy-subrc <> 0.
+          MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+            WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4 INTO DATA(lv_message).
+        ENDIF.
       ENDIF.
 
       IF NOT lv_nfenum IS INITIAL AND lv_docdate IS INITIAL.
@@ -167,7 +220,7 @@ IF <fs_nfetx_tab> IS ASSIGNED.
             OTHERS                  = 8.
 
         IF sy-subrc IS INITIAL.
-          LOOP AT lt_lines_read ASSIGNING FIELD-SYMBOL(<fs_lines_read>).
+          LOOP AT lt_lines_read ASSIGNING <fs_lines_read>.
             lv_docdate = |{ <fs_lines_read>-tdline+4(2) }/{ <fs_lines_read>-tdline+2(2) }|.
           ENDLOOP.
         ENDIF.
