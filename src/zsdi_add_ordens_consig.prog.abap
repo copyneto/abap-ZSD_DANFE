@@ -109,6 +109,7 @@ IF <fs_nfetx_tab> IS ASSIGNED.
         ENDIF.
       ENDIF.
 
+      "Fluig
       SELECT SINGLE nfenum, docdat
         FROM j_1bnfdoc
       WHERE
@@ -126,8 +127,22 @@ IF <fs_nfetx_tab> IS ASSIGNED.
           AND bsark EQ 'CARG'.
 
         IF sy-subrc IS INITIAL.
-
           lv_name_read = |{ <fs_vbrp1>-vbelv }{ <fs_vbrp1>-posnv }|.
+        ELSE.
+
+          SELECT SINGLE vbelv, posnv
+            FROM vbfa
+            WHERE vbeln EQ @<fs_vbrp1>-vgbel
+            AND posnn EQ @<fs_vbrp1>-vgpos
+            AND vbtyp_v EQ 'G' "contrato
+           INTO @DATA(ls_contrato).
+
+          lv_name_read = |{ ls_contrato-vbelv }{ ls_contrato-posnv }|.
+
+        ENDIF.
+
+
+        IF NOT lv_name_read IS INITIAL.
 
           CALL FUNCTION 'READ_TEXT'
             EXPORTING
