@@ -1040,7 +1040,10 @@
    <item>  WHEN &apos;3SUL&apos;.</item>
    <item>    v_canhoto_danfe = &apos;CANHOTO_DANFE_3SUL&apos;.</item>
    <item>  WHEN &apos;2400&apos;. &quot;&apos;PIMP&apos;.</item>
-   <item>    v_canhoto_danfe = &apos;CANHOTO_DANFE_PIMP&apos;.</item>
+   <item>* LSCHEPP - 8000008291 - ALTERAÇÃO DE RAZÃO SOCIAL PC01 - 27.06.2023 Início</item>
+   <item>*    v_canhoto_danfe = &apos;CANHOTO_DANFE_PIMP&apos;.</item>
+   <item>    v_canhoto_danfe = &apos;CANHOTO_DANFE_PIMP_NOVO&apos;.</item>
+   <item>* LSCHEPP - 8000008291 - ALTERAÇÃO DE RAZÃO SOCIAL PC01 - 27.06.2023 Fim</item>
    <item>  WHEN &apos;2600&apos;. &quot;&apos;TCOR&apos;.</item>
    <item>    v_canhoto_danfe = &apos;CANHOTO_DANFE_TCOR&apos;.</item>
    <item>  WHEN &apos;3400&apos;. &quot;&apos;POSB&apos;.</item>
